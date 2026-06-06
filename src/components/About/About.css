@@ -1,0 +1,206 @@
+.about{
+padding:120px 10%;
+}
+
+.about-container{
+max-width:1200px;
+margin:auto;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:80px;
+
+flex-wrap:wrap;
+}
+
+/* PROFILE IMAGE */
+
+.about-image{
+
+  width:320px;
+  height:380px;
+
+  padding:6px;
+
+  border-radius:30px;
+
+  background:linear-gradient(
+    135deg,
+    #00e5ff,
+    #3b82f6,
+    #7c3aed
+  );
+
+  position:relative;
+
+  box-shadow:
+  0 0 20px rgba(0,229,255,.25);
+
+  animation:glow 4s ease infinite;
+}
+.about-image::before,
+.about-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:60px;
+  height:60px;
+
+  border:4px solid #00e5ff;
+}
+
+.about-image::before{
+
+  top:-12px;
+  left:-12px;
+
+  border-right:none;
+  border-bottom:none;
+
+  border-radius:20px 0 0 0;
+}
+
+.about-image::after{
+
+  bottom:-12px;
+  right:-12px;
+
+  border-left:none;
+  border-top:none;
+
+  border-radius:0 0 20px 0;
+}
+
+.about-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  border-radius:24px;
+
+  display:block;
+}
+
+
+/* CONTENT */
+
+.about-content{
+flex:1;
+min-width:320px;
+}
+
+.about-content h2{
+
+font-size:3rem;
+
+margin-bottom:25px;
+
+background:linear-gradient(
+90deg,
+#00e5ff,
+#3b82f6
+);
+
+background-clip:text;
+-webkit-background-clip:text;
+
+color:transparent;
+}
+
+.about-content p{
+
+color:#d4d4d8;
+
+line-height:1.9;
+
+margin-bottom:18px;
+
+font-size:1.05rem;
+}
+
+/* INTERESTS */
+
+.interests{
+
+margin-top:30px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+}
+
+.interests span{
+
+padding:10px 18px;
+
+border-radius:50px;
+
+background:rgba(0,229,255,.08);
+
+border:1px solid rgba(0,229,255,.2);
+
+color:#00e5ff;
+
+transition:.3s;
+}
+
+.interests span:hover{
+
+transform:translateY(-4px);
+
+background:rgba(0,229,255,.15);
+}
+
+/* QUOTE */
+
+blockquote{
+
+margin-top:40px;
+
+padding-left:20px;
+
+border-left:4px solid #00e5ff;
+
+color:#a1a1aa;
+
+font-style:italic;
+
+line-height:1.8;
+}
+
+/* ANIMATION */
+
+@keyframes rotateBorder{
+
+from{
+filter:hue-rotate(0deg);
+}
+
+to{
+filter:hue-rotate(360deg);
+}
+}
+@keyframes glow{
+
+  0%{
+    box-shadow:
+    0 0 15px rgba(0,229,255,.2);
+  }
+
+  50%{
+    box-shadow:
+    0 0 35px rgba(0,229,255,.45);
+  }
+
+  100%{
+    box-shadow:
+    0 0 15px rgba(0,229,255,.2);
+  }
+}

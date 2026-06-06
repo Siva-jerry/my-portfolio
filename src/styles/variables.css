@@ -1,0 +1,25 @@
+:root {
+
+  /* Backgrounds */
+  --bg-primary: #050505;
+  --bg-secondary: #0f0f0f;
+
+  /* Cards */
+  --card-bg: rgba(255,255,255,0.05);
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+
+  /* Accent Colors */
+  --primary: #7c3aed;
+--secondary: #3b82f6;
+
+  /* Borders */
+  --glass-border: rgba(255,255,255,0.08);
+
+  /* Shadows */
+  --shadow-cyan: 0 0 30px rgba(0,245,255,0.3);
+  --shadow-purple: 0 0 30px rgba(139,92,246,0.3);
+
+}
