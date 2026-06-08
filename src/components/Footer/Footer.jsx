@@ -5,6 +5,7 @@ import {
   FaLinkedin,
   FaInstagram,
   FaHeart,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 function Footer() {
@@ -47,29 +48,45 @@ function Footer() {
             <FaInstagram />
           </a>
 
+          <a
+  href="https://maps.app.goo.gl/WtkNXQ5noKeAGXz8A?g_st=awb"
+  target="_blank"
+  rel="noreferrer"
+>
+  <FaMapMarkerAlt />
+</a>
+
         </div>
 
         <div className="footer-links">
 
-          <a href="#about">About</a>
+  <a href="#about">About</a>
 
-          <a href="#projects">Projects</a>
+  <a href="#projects">Projects</a>
 
-          <a href="#skills">Skills</a>
+  <a href="#skills">Skills</a>
 
-          <a href="#achievements">
-            Achievements
-          </a>
+  <a href="#achievements">
+    Achievements
+  </a>
 
-          <a href="#certifications">
-            Certifications
-          </a>
+  <a href="#certifications">
+    Certifications
+  </a>
 
-          <a href="#contact">
-            Contact
-          </a>
+  <a href="#contact">
+    Contact
+  </a>
 
-        </div>
+  <a
+    href="https://maps.app.goo.gl/WtkNXQ5noKeAGXz8A?g_st=awb"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Location
+  </a>
+
+</div>
 
       </div>
 

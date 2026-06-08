@@ -2,6 +2,7 @@ import "./Projects.css";
 import libraryImg from "../../assets/projects/library.png";
 import timetableImg from "../../assets/projects/timetable.png";
 import farewellImg from "../../assets/projects/farewell.png";
+import spiderverseImg from "../../assets/projects/spiderverse.png";
 
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -55,6 +56,23 @@ const projects = [
     demo: "https://siva-jerry.github.io/Batch_2022-2026_/",
     github: "https://github.com/Siva-jerry/Batch_2022-2026_",
   },
+  {
+  image: spiderverseImg,
+  title: "Spider-Verse Interactive Fan Experience",
+  description:
+    "An immersive Spider-Man themed web application featuring character stories, powers, villains, allies, iconic suits, Spider-Verse exploration, cinematic visuals, background music, and an embedded movie trailer for an engaging user experience.",
+  tech: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Responsive Design",
+    "GitHub Pages",
+    "Multimedia Integration",
+  ],
+  demo: "https://siva-jerry.github.io/spiderverse/",
+  github: "https://github.com/Siva-jerry/spiderverse",
+},
+
 ];
 
 function Projects() {
@@ -87,12 +105,20 @@ function Projects() {
               </div>
 
               <div className="project-links">
-                <a href={project.demo}>
+                <a
+  href={project.demo}
+  target="_blank"
+  rel="noopener noreferrer"
+>
                   <FaExternalLinkAlt />
                   Demo
                 </a>
 
-                <a href={project.github}>
+                <a
+  href={project.github}
+  target="_blank"
+  rel="noopener noreferrer"
+>
                   <FaGithub />
                   GitHub
                 </a>

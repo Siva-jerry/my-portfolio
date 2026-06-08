@@ -12,7 +12,7 @@ function Navbar() {
       <div className="container nav-container">
 
         <h2 className="logo">
-          ⚡ Siva M
+          ⚡ Siva
         </h2>
 
         <ul className="nav-links">

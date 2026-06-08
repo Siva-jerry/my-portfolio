@@ -42,15 +42,20 @@ function Contact() {
           </span>
         </a>
 
-        <div className="contact-card">
-          <FaMapMarkerAlt />
+        <a
+  href="https://maps.app.goo.gl/WtkNXQ5noKeAGXz8A?g_st=awb"
+  target="_blank"
+  rel="noreferrer"
+  className="contact-card"
+>
+  <FaMapMarkerAlt />
 
-          <h3>Location</h3>
+  <h3>Location</h3>
 
-          <span>
-            Rajapalayam, Tamil Nadu
-          </span>
-        </div>
+  <span>
+    Rajapalayam, Tamil Nadu
+  </span>
+</a>
 
         <a
           href="https://github.com/Siva-jerry"
