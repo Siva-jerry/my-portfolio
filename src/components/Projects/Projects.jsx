@@ -3,6 +3,7 @@ import libraryImg from "../../assets/projects/library.png";
 import timetableImg from "../../assets/projects/timetable.png";
 import farewellImg from "../../assets/projects/farewell.png";
 import spiderverseImg from "../../assets/projects/spiderverse.png";
+import ben10Img from "../../assets/projects/ben10.png";
 
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -20,7 +21,7 @@ const projects = [
       "Authentication",
       "FCM",
     ],
-    demo: "#",
+    demo: "https://drive.google.com/drive/folders/1evlwQ-18_IuM3JKiu3TBtAoCRGB5-t-l",
     github: "#",
   },
 
@@ -37,7 +38,7 @@ const projects = [
       "Authentication",
       "AI",
     ],
-    demo: "#",
+    demo: "https://drive.google.com/drive/folders/1LnqB4LVU2rIy8RQPnxHedKOz-SPeFJz3",
     github: "#",
   },
 
@@ -72,6 +73,28 @@ const projects = [
   demo: "https://siva-jerry.github.io/spiderverse/",
   github: "https://github.com/Siva-jerry/spiderverse",
 },
+{
+  image: ben10Img,
+
+  title: "Ben 10 Universe Interactive Fan Experience",
+
+  description:
+    "A fully responsive Ben 10 themed web application featuring Original Series, Alien Force, Ultimate Alien and Omniverse databases. Includes alien encyclopedia, allies, villains, transformations, universe exploration, cinematic animations, background music and immersive user interaction.",
+
+  tech: [
+    "React",
+    "TypeScript",
+    "Vite",
+    "CSS3",
+    "Framer Motion",
+    "GitHub Pages",
+    "Responsive Design",
+  ],
+
+  demo: "https://siva-jerry.github.io/ben10-universe/",
+
+  github: "https://github.com/Siva-jerry/ben10-universe",
+},
 
 ];
 
@@ -80,10 +103,11 @@ function Projects() {
     <section id="projects" className="projects">
       <div className="projects-header">
         <h2>Featured Projects</h2>
-        <p>
-          Real-world applications built using Android Development,
-          Full Stack Technologies, Firebase and Artificial Intelligence.
-        </p>
+       <p>
+  Real-world applications built using React, Android Development,
+  Full Stack Technologies, Firebase, Artificial Intelligence and
+  Interactive Web Experiences.
+</p>
       </div>
 
       <div className="projects-wrapper">
