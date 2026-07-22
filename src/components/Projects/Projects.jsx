@@ -4,6 +4,7 @@ import timetableImg from "../../assets/projects/timetable.png";
 import farewellImg from "../../assets/projects/farewell.png";
 import spiderverseImg from "../../assets/projects/spiderverse.png";
 import ben10Img from "../../assets/projects/ben10.png";
+import shopaiImg from "../../assets/projects/shopai.png";
 
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -94,6 +95,31 @@ const projects = [
   demo: "https://siva-jerry.github.io/ben10-universe/",
 
   github: "https://github.com/Siva-jerry/ben10-universe",
+},
+{
+  image: shopaiImg,
+
+  title: "ShopAI – AI-Powered Product Search Platform",
+
+  description:
+    "An AI-powered product discovery and recommendation platform that searches products from multiple external APIs, analyzes product relevance, price, quality and customer feedback, and provides intelligent recommendations such as Best Overall, Best Budget and Best Premium. The application includes advanced product search, category exploration, AI insights and responsive product cards.",
+
+  tech: [
+    "React",
+    "Vite",
+    "Node.js",
+    "Express.js",
+    "Gemini AI",
+    "REST APIs",
+    "Axios",
+    "Framer Motion",
+    "Render",
+    "Vercel",
+  ],
+
+  demo: "https://shop-ai-ten-zeta.vercel.app",
+
+  github: "https://github.com/Siva-jerry/ShopAI",
 },
 
 ];
