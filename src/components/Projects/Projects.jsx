@@ -5,7 +5,7 @@ import farewellImg from "../../assets/projects/farewell.png";
 import spiderverseImg from "../../assets/projects/spiderverse.png";
 import ben10Img from "../../assets/projects/ben10.png";
 import shopaiImg from "../../assets/projects/shopai.png";
-
+import portfolioImg from "../../assets/projects/portfolio.avif";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
@@ -121,7 +121,35 @@ const projects = [
 
   github: "https://github.com/Siva-jerry/ShopAI",
 },
+{
+  image: portfolioImg,
 
+  title: "Portfolio CMS",
+
+  description:
+    "A modern Portfolio Management System with a dedicated Admin Dashboard. Update Hero, About, Skills, Projects, Experience, Certificates, Gallery, Testimonials, Contact and Footer without editing code.",
+
+  tech: [
+    "React",
+    "Firebase",
+    "Firestore",
+    "Supabase",
+    "Vite",
+    "Vercel",
+  ],
+
+  clientDemo:
+    "https://client-portfolio-inky.vercel.app",
+
+  adminDemo:
+    "https://drive.google.com/drive/folders/1-bDXgIOdw_rO-htoP8fJb-08Hqv61Sh9",
+
+  clientGithub:
+    "https://github.com/Siva-jerry/Client-Portfolio",
+
+  adminGithub:
+    "https://github.com/Siva-jerry/Admin-Portfolio",
+},
 ];
 
 function Projects() {
@@ -153,26 +181,69 @@ function Projects() {
                   <span key={i}>{tech}</span>
                 ))}
               </div>
+<div className="project-links">
 
-              <div className="project-links">
-                <a
-  href={project.demo}
-  target="_blank"
-  rel="noopener noreferrer"
->
-                  <FaExternalLinkAlt />
-                  Demo
-                </a>
+  {project.clientDemo ? (
+    <>
+      <a
+        href={project.clientDemo}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaExternalLinkAlt />
+        Client Demo
+      </a>
 
-                <a
-  href={project.github}
-  target="_blank"
-  rel="noopener noreferrer"
->
-                  <FaGithub />
-                  GitHub
-                </a>
-              </div>
+      <a
+        href={project.adminDemo}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaExternalLinkAlt />
+        Admin Demo
+      </a>
+
+      <a
+        href={project.clientGithub}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaGithub />
+        Client GitHub
+      </a>
+
+      <a
+        href={project.adminGithub}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaGithub />
+        Admin GitHub
+      </a>
+    </>
+  ) : (
+    <>
+      <a
+        href={project.demo}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaExternalLinkAlt />
+        Demo
+      </a>
+
+      <a
+        href={project.github}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaGithub />
+        GitHub
+      </a>
+    </>
+  )}
+
+</div>
             </div>
 
             <div className="project-right">
