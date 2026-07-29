@@ -64,7 +64,7 @@ const projects = [
   description:
     "An immersive Spider-Man themed web application featuring character stories, powers, villains, allies, iconic suits, Spider-Verse exploration, cinematic visuals, background music, and an embedded movie trailer for an engaging user experience.",
   tech: [
-    "HTML",
+    "React",
     "CSS",
     "JavaScript",
     "Responsive Design",
