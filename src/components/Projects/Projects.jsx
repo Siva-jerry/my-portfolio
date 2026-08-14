@@ -7,6 +7,7 @@ import ben10Img from "../../assets/projects/ben10.png";
 import shopaiImg from "../../assets/projects/shopai.png";
 import portfolioImg from "../../assets/projects/portfolio.avif";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import harryPotterImg from "../../assets/projects/harry-potter.png";
 
 const projects = [
   {
@@ -149,6 +150,33 @@ const projects = [
 
   adminGithub:
     "https://github.com/Siva-jerry/Admin-Portfolio",
+},
+
+{
+  image: harryPotterImg,
+
+  title: "Harry Potter – Interactive Wizarding Encyclopedia",
+
+  description:
+    "An immersive Harry Potter fan encyclopedia built as a cinematic wizarding-world experience. Explore characters, Hogwarts, houses, spells, potions, magical creatures, artifacts, places, Dark Arts, stories and an interactive wizarding timeline through uniquely designed sections, animations, multimedia and responsive navigation.",
+
+  tech: [
+    "React",
+    "Vite",
+    "JavaScript",
+    "CSS3",
+    "React Router",
+    "Firebase Storage",
+    "Responsive Design",
+    "Multimedia Integration",
+    "Vercel",
+  ],
+
+  demo:
+    "https://harry-potter-encyclopedia-eosin.vercel.app",
+
+  github:
+    "https://github.com/Siva-jerry/harry-potter-encyclopedia",
 },
 ];
 
