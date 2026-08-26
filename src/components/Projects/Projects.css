@@ -323,27 +323,98 @@
 
 @media (max-width: 600px) {
   .projects-section {
-    padding: 70px 0 50px;
+    padding: 48px 0 24px;
+  }
+
+  .projects-category-nav {
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-tab-btn {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.78rem;
+  }
+
+  .tab-count {
+    font-size: 0.68rem;
+    padding: 0.1rem 0.4rem;
+  }
+
+  .projects-showcase-grid {
+    gap: 1.4rem;
   }
 
   .project-showcase-card {
-    padding: 1.15rem;
+    padding: 1rem;
+    border-radius: 18px;
   }
 
   .project-viewport-window {
-    height: 200px;
+    height: 180px;
+    margin-bottom: 0.9rem;
+    border-radius: 12px;
+  }
+
+  .viewport-header-bar {
+    height: 28px;
+    padding: 0 0.6rem;
+  }
+
+  .viewport-traffic-dots {
+    gap: 4px;
+  }
+
+  .v-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .viewport-status-badge {
+    font-size: 0.65rem;
   }
 
   .viewport-address-slug {
     display: none;
   }
 
+  .project-headline-row {
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .project-number-tag {
+    font-size: 0.95rem;
+  }
+
   .project-title-text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .project-summary-text {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-bottom: 0.9rem;
+  }
+
+  .project-tech-badges {
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+  }
+
+  .tech-badge-item {
+    padding: 0.25rem 0.65rem;
+    font-size: 0.72rem;
+  }
+
+  .project-action-buttons {
+    gap: 0.5rem;
   }
 
   .p-btn {
     width: 100%;
     justify-content: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.82rem;
   }
 }

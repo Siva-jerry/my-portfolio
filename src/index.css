@@ -184,12 +184,33 @@ section {
   }
 
   .section-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.2rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .container {
     padding: 0 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.8rem;
+  }
+
+  .section-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.6;
   }
 }
