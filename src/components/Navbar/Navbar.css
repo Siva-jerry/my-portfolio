@@ -360,3 +360,32 @@
     display: none;
   }
 }
+
+@media (max-width: 600px) {
+  .navbar-wrapper {
+    top: 10px;
+    padding: 0 0.85rem;
+  }
+
+  .navbar-pill {
+    height: 56px;
+    padding: 0 0.9rem 0 1.1rem;
+  }
+
+  .logo-script {
+    font-size: 1.95rem;
+  }
+
+  .theme-toggle-btn,
+  .mobile-menu-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.15rem;
+  }
+
+  .mobile-drawer {
+    top: 72px;
+    left: 0.85rem;
+    right: 0.85rem;
+  }
+}
