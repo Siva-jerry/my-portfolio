@@ -1,25 +1,155 @@
 :root {
+  /* Fonts */
+  --font-main: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-script: 'Dancing Script', 'Great Vibes', cursive;
 
-  /* Backgrounds */
-  --bg-primary: #050505;
-  --bg-secondary: #0f0f0f;
+  /* Global Animations & Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+}
 
-  /* Cards */
-  --card-bg: rgba(255,255,255,0.05);
+/* Light / Day Theme - Crisp Sky Blue & Lavender Glow */
+:root,
+[data-theme="light"] {
+  --bg-base: #f0f6ff;
+  --bg-primary: #f4f8fe;
+  --bg-secondary: #e9f0fc;
+  
+  --bg-mesh: 
+    radial-gradient(at 8% 12%, rgba(0, 229, 255, 0.25) 0px, transparent 48%),
+    radial-gradient(at 90% 15%, rgba(139, 92, 246, 0.28) 0px, transparent 48%),
+    radial-gradient(at 50% 50%, rgba(56, 189, 248, 0.22) 0px, transparent 52%),
+    radial-gradient(at 12% 85%, rgba(124, 58, 237, 0.22) 0px, transparent 48%),
+    radial-gradient(at 88% 88%, rgba(0, 229, 255, 0.25) 0px, transparent 48%),
+    #f0f6ff;
 
-  /* Text */
+  /* Glassmorphism Cards */
+  --card-bg: rgba(255, 255, 255, 0.78);
+  --card-bg-hover: rgba(255, 255, 255, 0.95);
+  --card-bg-subtle: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(186, 215, 255, 0.6);
+  --glass-border-hover: rgba(0, 229, 255, 0.6);
+  --glass-shadow: 0 10px 30px -8px rgba(2, 132, 199, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --glass-shadow-hover: 0 20px 45px -10px rgba(0, 229, 255, 0.28), 0 8px 20px rgba(124, 58, 237, 0.1);
+
+  /* Typography */
+  --text-primary: #0a1128;
+  --text-secondary: #3b4866;
+  --text-muted: #627293;
+
+  /* Sky Blue & Purple Palette */
+  --sky-blue: #00e5ff;
+  --sky-blue-deep: #0284c7;
+  --purple-main: #7c3aed;
+  --purple-light: #8b5cf6;
+  --indigo-accent: #6366f1;
+
+  --primary: #0284c7;
+  --secondary: #7c3aed;
+
+  --primary-gradient: linear-gradient(135deg, #00e5ff 0%, #0284c7 40%, #7c3aed 100%);
+  --brand-gradient: linear-gradient(135deg, #00e5ff 0%, #38bdf8 30%, #8b5cf6 70%, #7c3aed 100%);
+  --purple-sky-gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 40%, #00e5ff 100%);
+  --sky-gradient: linear-gradient(135deg, #00e5ff 0%, #38bdf8 100%);
+
+  /* Navigation & Sidebar */
+  --nav-bg: rgba(255, 255, 255, 0.82);
+  --nav-border: rgba(186, 215, 255, 0.7);
+  --nav-shadow: 0 12px 36px -10px rgba(2, 132, 199, 0.18);
+
+  --social-bg: rgba(255, 255, 255, 0.85);
+  --social-border: rgba(186, 215, 255, 0.8);
+  --social-shadow: 0 10px 28px -6px rgba(2, 132, 199, 0.2);
+  --social-icon: #334155;
+  --social-icon-hover: #0284c7;
+
+  /* Tag Badges */
+  --tag-bg: rgba(0, 229, 255, 0.1);
+  --tag-border: rgba(0, 229, 255, 0.3);
+  --tag-color: #0369a1;
+
+  /* Image Frame background */
+  --img-frame-bg: #eaf1fc;
+  --img-frame-border: rgba(186, 215, 255, 0.8);
+
+  /* Scrollbar */
+  --scrollbar-track: #e9f0fc;
+  --scrollbar-thumb: #93c5fd;
+  --scrollbar-thumb-hover: #60a5fa;
+}
+
+/* Dark Mode - Deep Space Navy with Neon Sky Blue & Electric Purple Glow */
+[data-theme="dark"] {
+  --bg-base: #060814;
+  --bg-primary: #0a0d1e;
+  --bg-secondary: #0f142c;
+  
+  --bg-mesh: 
+    radial-gradient(at 8% 12%, rgba(0, 229, 255, 0.16) 0px, transparent 48%),
+    radial-gradient(at 90% 15%, rgba(124, 58, 237, 0.22) 0px, transparent 48%),
+    radial-gradient(at 50% 50%, rgba(56, 189, 248, 0.12) 0px, transparent 52%),
+    radial-gradient(at 12% 85%, rgba(139, 92, 246, 0.18) 0px, transparent 48%),
+    radial-gradient(at 88% 88%, rgba(0, 229, 255, 0.15) 0px, transparent 48%),
+    #060814;
+
+  /* Glassmorphism Cards */
+  --card-bg: rgba(13, 18, 38, 0.72);
+  --card-bg-hover: rgba(18, 25, 54, 0.88);
+  --card-bg-subtle: rgba(13, 18, 38, 0.45);
+  --glass-border: rgba(0, 229, 255, 0.14);
+  --glass-border-hover: rgba(0, 229, 255, 0.45);
+  --glass-shadow: 0 10px 32px -8px rgba(0, 0, 0, 0.7);
+  --glass-shadow-hover: 0 20px 48px -10px rgba(0, 229, 255, 0.22), 0 8px 24px rgba(124, 58, 237, 0.15);
+
+  /* Typography */
   --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
+  --text-secondary: #cbd5e1;
+  --text-muted: #8493a8;
 
-  /* Accent Colors */
-  --primary: #7c3aed;
---secondary: #3b82f6;
+  /* Sky Blue & Purple Palette */
+  --sky-blue: #00e5ff;
+  --sky-blue-deep: #38bdf8;
+  --purple-main: #8b5cf6;
+  --purple-light: #a855f7;
+  --indigo-accent: #818cf8;
 
-  /* Borders */
-  --glass-border: rgba(255,255,255,0.08);
+  --primary: #00e5ff;
+  --secondary: #8b5cf6;
 
-  /* Shadows */
-  --shadow-cyan: 0 0 30px rgba(0,245,255,0.3);
-  --shadow-purple: 0 0 30px rgba(139,92,246,0.3);
+  --primary-gradient: linear-gradient(135deg, #00e5ff 0%, #38bdf8 40%, #8b5cf6 100%);
+  --brand-gradient: linear-gradient(135deg, #00e5ff 0%, #38bdf8 30%, #a855f7 70%, #8b5cf6 100%);
+  --purple-sky-gradient: linear-gradient(135deg, #8b5cf6 0%, #a855f7 40%, #00e5ff 100%);
+  --sky-gradient: linear-gradient(135deg, #00e5ff 0%, #38bdf8 100%);
 
+  /* Navigation & Sidebar */
+  --nav-bg: rgba(9, 13, 28, 0.82);
+  --nav-border: rgba(0, 229, 255, 0.16);
+  --nav-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.8);
+
+  --social-bg: rgba(13, 18, 38, 0.85);
+  --social-border: rgba(0, 229, 255, 0.18);
+  --social-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.7);
+  --social-icon: #cbd5e1;
+  --social-icon-hover: #00e5ff;
+
+  /* Tag Badges */
+  --tag-bg: rgba(0, 229, 255, 0.1);
+  --tag-border: rgba(0, 229, 255, 0.25);
+  --tag-color: #38bdf8;
+
+  /* Image Frame background */
+  --img-frame-bg: #0a0e22;
+  --img-frame-border: rgba(0, 229, 255, 0.18);
+
+  /* Scrollbar */
+  --scrollbar-track: #060814;
+  --scrollbar-thumb: #1e293b;
+  --scrollbar-thumb-hover: #38bdf8;
 }

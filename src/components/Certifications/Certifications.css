@@ -1,237 +1,263 @@
-.certifications{
-  padding:100px 8%;
-  position:relative;
-  overflow:hidden;
+.certifications-section {
+  padding: 100px 0 80px;
+  position: relative;
 }
 
-/* Background Glow */
-
-.certifications::before{
-  content:"";
-  position:absolute;
-
-  width:350px;
-  height:350px;
-
-  background:rgba(0,229,255,.08);
-
-  border-radius:50%;
-  filter:blur(120px);
-
-  top:0;
-  left:-120px;
-
-  z-index:-1;
+/* Top Metrics Bar */
+.cert-metrics-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.8rem 2.5rem;
+  border-radius: var(--radius-xl);
+  margin-bottom: 3rem;
+  box-shadow: var(--glass-shadow);
 }
 
-.certifications::after{
-  content:"";
-  position:absolute;
-
-  width:300px;
-  height:300px;
-
-  background:rgba(255,183,71,.08);
-
-  border-radius:50%;
-  filter:blur(120px);
-
-  right:-100px;
-  bottom:0;
-
-  z-index:-1;
+.cert-metric-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* Header */
-
-.certifications-header{
-  text-align:center;
-  margin-bottom:50px;
+.metric-digit {
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  font-family: var(--font-heading);
 }
 
-.certifications-header h2{
-  font-size:3.5rem;
-  font-weight:800;
-
-  background:linear-gradient(
-    135deg,
-    #00e5ff,
-    #7cf8ff,
-    #ffffff
-  );
-
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-
-  margin-bottom:15px;
+.metric-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
 }
 
-.certifications-header p{
-  color:#bdbdbd;
-  max-width:750px;
-  margin:auto;
-  line-height:1.8;
+.metric-divider {
+  width: 1px;
+  height: 45px;
+  background: var(--glass-border);
 }
 
-/* Counter */
-
-.certificate-counter{
-  width:260px;
-
-  margin:0 auto 50px;
-
-  text-align:center;
-
-  padding:25px;
-
-  border-radius:24px;
-
-  background:rgba(255,255,255,.05);
-
-  backdrop-filter:blur(20px);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  box-shadow:
-  0 0 25px rgba(0,229,255,.1);
+/* Category Filter Pills */
+.cert-filter-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 3rem;
 }
 
-.certificate-counter svg{
-  font-size:2rem;
-  color:#00e5ff;
+.cert-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-full);
+  background: var(--card-bg-subtle);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
-.certificate-counter h3{
-  font-size:3rem;
-  color:white;
-  margin:10px 0;
+.pill-ico {
+  font-size: 0.95rem;
+  display: flex;
 }
 
-.certificate-counter span{
-  color:#bdbdbd;
+.pill-count {
+  font-size: 0.75rem;
+  padding: 0.12rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
 }
 
-/* Grid */
-
-.certifications-grid{
-  display:grid;
-
-  grid-template-columns:
-  repeat(auto-fit,minmax(300px,1fr));
-
-  gap:25px;
+.cert-pill-btn:hover {
+  color: var(--text-primary);
+  background: var(--card-bg-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-2px);
 }
 
-/* Card */
-
-.cert-card{
-  position:relative;
-
-  background:rgba(255,255,255,.05);
-
-  backdrop-filter:blur(20px);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:28px;
-
-  padding:30px;
-
-  transition:.4s;
-
-  overflow:hidden;
+.cert-pill-btn.active {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 8px 24px -4px rgba(0, 229, 255, 0.45);
+  transform: translateY(-2px);
 }
 
-.cert-card:hover{
-  transform:translateY(-10px);
-
-  box-shadow:
-  0 0 25px rgba(0,229,255,.15);
+.cert-pill-btn.active .pill-count {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: transparent;
+  color: #ffffff;
 }
 
-/* Icon */
-
-.cert-icon{
-  font-size:2.5rem;
-
-  margin-bottom:20px;
+/* Unique Certificate Passport Badge Grid */
+.cert-passport-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
 }
 
-.cert-card h3{
-  color:white;
-  margin-bottom:20px;
+.cert-passport-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Lists */
-
-.cert-card ul{
-  list-style:none;
+.cert-card-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
 }
 
-.cert-card li{
-  color:#d7d7d7;
-
-  margin-bottom:12px;
-
-  line-height:1.6;
-
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
+.cert-passport-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 16px 36px -8px rgba(0, 229, 255, 0.18);
 }
 
-.cert-card ul li::before {
-  content: "✦";
-  color: #00e5ff;
-  margin-right: 10px;
-  font-weight: bold;
+/* Topbar */
+.cert-card-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.15rem;
 }
 
-/* Category Colors */
-
-.ai-card{
-  border-color:rgba(0,229,255,.25);
+.cert-issuer-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
 }
 
-.ai-card .cert-icon{
-  color:#00e5ff;
+.issuer-icon {
+  color: var(--sky-blue);
+  font-size: 0.85rem;
 }
 
-.dev-card{
-  border-color:rgba(123,97,255,.25);
+[data-theme="light"] .issuer-icon {
+  color: var(--sky-blue-deep);
 }
 
-.dev-card .cert-icon{
-  color:#7b61ff;
+.cert-verified-seal {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.data-card{
-  border-color:rgba(0,255,140,.25);
+.shield-ico {
+  font-size: 0.75rem;
 }
 
-.data-card .cert-icon{
-  color:#00ff8c;
+/* Body */
+.cert-body {
+  margin-bottom: 1.4rem;
+  flex-grow: 1;
 }
 
-.industry-card{
-  border-color:rgba(255,183,71,.25);
+.cert-title-heading {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.35;
+  transition: color 0.25s ease;
 }
 
-.industry-card .cert-icon{
-  color:#ffb347;
+.cert-passport-card:hover .cert-title-heading {
+  color: var(--sky-blue);
+}
+
+[data-theme="light"] .cert-passport-card:hover .cert-title-heading {
+  color: var(--sky-blue-deep);
+}
+
+/* Footer */
+.cert-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+  gap: 0.5rem;
+}
+
+.cert-category-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.cert-skill-pill {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-full);
+  border: 1px solid;
+  background: var(--card-bg-subtle);
 }
 
 /* Responsive */
-
-@media(max-width:768px){
-
-  .certifications-header h2{
-    font-size:2.5rem;
+@media (max-width: 768px) {
+  .cert-metrics-bar {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
 
-  .certificate-counter{
-    width:100%;
+  .metric-divider {
+    display: none;
   }
 
+  .cert-passport-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications-section {
+    padding: 70px 0 50px;
+  }
+
+  .cert-filter-pills {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .cert-pill-btn {
+    padding: 0.5rem 0.95rem;
+    font-size: 0.82rem;
+  }
 }

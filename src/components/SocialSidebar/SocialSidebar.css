@@ -1,0 +1,99 @@
+.social-sidebar {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 990;
+  pointer-events: auto;
+}
+
+.social-sidebar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-sidebar-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--social-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--social-border);
+  box-shadow: var(--social-shadow);
+  color: var(--social-icon);
+  font-size: 1.2rem;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+}
+
+.social-sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.social-sidebar-btn:hover {
+  transform: translateY(-4px) scale(1.1);
+  color: #ffffff;
+  background: var(--primary-gradient);
+  border-color: transparent;
+  box-shadow: 0 10px 24px -4px rgba(0, 229, 255, 0.45);
+}
+
+.social-sidebar-btn:hover .social-sidebar-icon {
+  transform: scale(1.12);
+}
+
+/* Tooltip */
+.social-tooltip {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-6px);
+  background: var(--card-bg-hover);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+
+.social-tooltip::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent var(--glass-border) transparent transparent;
+}
+
+.social-sidebar-btn:hover .social-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Hide or dock gracefully on smaller screens */
+@media (max-width: 900px) {
+  .social-sidebar {
+    display: none;
+  }
+}
