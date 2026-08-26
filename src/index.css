@@ -1,6 +1,6 @@
 @import "./styles/variables.css";
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,6 +9,10 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg-base);
 }
 
 body {
@@ -17,13 +21,27 @@ body {
   background-image: var(--bg-mesh);
   background-attachment: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
   color: var(--text-primary);
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  position: relative;
   transition: background 0.4s ease, color 0.4s ease;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root,
+.portfolio-app {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  background-color: var(--bg-base);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,6 +71,14 @@ button {
   outline: none;
   cursor: pointer;
   background: none;
+}
+
+/* Sections Global Container */
+section {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 /* Container with sufficient desktop gutter so left social sidebar never overlaps content */
@@ -105,7 +131,7 @@ button {
 }
 
 .section-title {
-  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
   font-weight: 900;
   line-height: 1.15;
   margin-bottom: 1rem;
