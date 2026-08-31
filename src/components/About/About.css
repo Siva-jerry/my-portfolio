@@ -173,8 +173,8 @@
   gap: 0.85rem;
   padding: 2.2rem;
   border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(124, 58, 237, 0.12) 100%);
-  border-left: 5px solid var(--sky-blue);
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.1) 0%, rgba(249, 115, 22, 0.14) 100%);
+  border-left: 5px solid var(--amber-yellow);
   border-top: 1px solid var(--glass-border);
   border-right: 1px solid var(--glass-border);
   border-bottom: 1px solid var(--glass-border);

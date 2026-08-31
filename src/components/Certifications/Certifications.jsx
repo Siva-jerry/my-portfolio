@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import "./Certifications.css";
 import {
-  FaCertificate,
   FaRobot,
   FaLaptopCode,
   FaChartLine,
   FaAward,
   FaShieldAlt,
   FaBuilding,
-  FaExternalLinkAlt,
-  FaLayerGroup,
 } from "react-icons/fa";
 
 const certCategories = [
@@ -27,7 +24,7 @@ const allCertificates = [
     issuer: "Outskill",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#a855f7",
+    color: "#f59e0b",
     tag: "LLMs & GenAI",
   },
   {
@@ -35,7 +32,7 @@ const allCertificates = [
     issuer: "IBM SkillsBuild",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#00e5ff",
+    color: "#facc15",
     tag: "Core AI",
   },
   {
@@ -43,7 +40,7 @@ const allCertificates = [
     issuer: "NoviTech R&D Pvt. Ltd.",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#8b5cf6",
+    color: "#f97316",
     tag: "AI Architecture",
   },
   {
@@ -51,7 +48,7 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#38bdf8",
+    color: "#fb923c",
     tag: "Vision Systems",
   },
   {
@@ -59,7 +56,7 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#7c3aed",
+    color: "#ea580c",
     tag: "Foundational AI",
   },
   {
@@ -67,7 +64,7 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#a855f7",
+    color: "#fbbf24",
     tag: "Neural Networks",
   },
   {
@@ -75,7 +72,7 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#00e5ff",
+    color: "#f59e0b",
     tag: "NLP & Text",
   },
 
@@ -85,7 +82,7 @@ const allCertificates = [
     issuer: "NoviTech R&D Pvt. Ltd.",
     category: "dev",
     categoryLabel: "Web & Software",
-    color: "#00e5ff",
+    color: "#f97316",
     tag: "MERN Stack",
   },
   {
@@ -93,7 +90,7 @@ const allCertificates = [
     issuer: "NoviTech R&D Pvt. Ltd.",
     category: "dev",
     categoryLabel: "Web & Software",
-    color: "#ec4899",
+    color: "#fbbf24",
     tag: "Design Systems",
   },
   {
@@ -101,7 +98,7 @@ const allCertificates = [
     issuer: "Campus Connection",
     category: "dev",
     categoryLabel: "Web & Software",
-    color: "#38bdf8",
+    color: "#f59e0b",
     tag: "Frontend Dev",
   },
   {
@@ -109,7 +106,7 @@ const allCertificates = [
     issuer: "CADD Expert Training Institution",
     category: "dev",
     categoryLabel: "Web & Software",
-    color: "#10b981",
+    color: "#ea580c",
     tag: "Mobile Apps",
   },
   {
@@ -117,7 +114,7 @@ const allCertificates = [
     issuer: "Vinsup Academy / Vinsup Infotech",
     category: "dev",
     categoryLabel: "Web & Software",
-    color: "#8b5cf6",
+    color: "#fb923c",
     tag: "Native Android",
   },
 
@@ -127,7 +124,7 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "data",
     categoryLabel: "Data & DevOps",
-    color: "#38bdf8",
+    color: "#facc15",
     tag: "Data Analytics",
   },
   {
@@ -135,7 +132,7 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "data",
     categoryLabel: "Data & DevOps",
-    color: "#00e5ff",
+    color: "#f97316",
     tag: "RPA Automation",
   },
   {
@@ -143,7 +140,7 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "data",
     categoryLabel: "Data & DevOps",
-    color: "#10b981",
+    color: "#ea580c",
     tag: "CI/CD Pipelines",
   },
   {
@@ -159,7 +156,7 @@ const allCertificates = [
     issuer: "IBM SkillsBuild",
     category: "data",
     categoryLabel: "Data & DevOps",
-    color: "#7c3aed",
+    color: "#fbbf24",
     tag: "Critical Analysis",
   },
   {
@@ -167,7 +164,7 @@ const allCertificates = [
     issuer: "IBM SkillsBuild",
     category: "data",
     categoryLabel: "Data & DevOps",
-    color: "#ec4899",
+    color: "#fb923c",
     tag: "Professionalism",
   },
 
@@ -185,7 +182,7 @@ const allCertificates = [
     issuer: "Edunet Foundation",
     category: "industry",
     categoryLabel: "Industry Program",
-    color: "#10b981",
+    color: "#f97316",
     tag: "Sustainable Tech",
   },
   {
@@ -193,7 +190,7 @@ const allCertificates = [
     issuer: "Shell & AICTE",
     category: "industry",
     categoryLabel: "Industry Program",
-    color: "#38bdf8",
+    color: "#fbbf24",
     tag: "Energy & Tech",
   },
   {
@@ -201,7 +198,7 @@ const allCertificates = [
     issuer: "Industry Partners",
     category: "industry",
     categoryLabel: "Industry Program",
-    color: "#8b5cf6",
+    color: "#ea580c",
     tag: "Industry Ready",
   },
   {
@@ -209,7 +206,7 @@ const allCertificates = [
     issuer: "Institutional Training",
     category: "industry",
     categoryLabel: "Industry Program",
-    color: "#00e5ff",
+    color: "#facc15",
     tag: "Hands-on Building",
   },
 ];
@@ -226,8 +223,8 @@ function Certifications() {
     <section className="certifications-section" id="certifications">
       <div className="container">
         {/* Section Header */}
+        <div className="section-badge">📜 Verified Credentials</div>
         <div className="section-header">
-          <div className="section-badge">📜 Verified Credentials</div>
           <h2 className="section-title">
             Certifications & <span>Specializations</span>
           </h2>

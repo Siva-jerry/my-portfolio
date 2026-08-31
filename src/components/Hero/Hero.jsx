@@ -4,7 +4,9 @@ import { TypeAnimation } from "react-type-animation";
 import { FiArrowRight, FiDownload } from "react-icons/fi";
 import { BsStars } from "react-icons/bs";
 import profileImg from "../../assets/images/profile.jpeg";
+import profileBackImg from "../../assets/images/profile-back.png";
 import HeroStats from "./HeroStats";
+import CursorMaskReveal from "./CursorMaskReveal";
 
 function Hero() {
   return (
@@ -59,7 +61,7 @@ function Hero() {
             </div>
           </div>
 
-          {/* Right Hero Glass Card with Real Profile Photo (matching reference image) */}
+          {/* Right Hero Glass Card with Interactive Cursor Mask Reveal Photo */}
           <div className="hero-visual">
             <div className="hero-orbital-ring"></div>
             <div className="hero-glow-mesh"></div>
@@ -73,14 +75,15 @@ function Hero() {
                 <BsStars />
               </div>
 
-              {/* Real Profile Photo in Rounded Frame */}
+              {/* Cursor Mask Reveal Spotlight Frame */}
               <div className="hero-photo-wrapper">
-                <img
-                  src={profileImg}
-                  alt="Siva M - Full Stack Developer"
-                  className="hero-profile-image"
+                <CursorMaskReveal
+                  mainImage={profileImg}
+                  revealImage={profileBackImg}
+                  mainAlt="Siva M - Full Stack Developer"
+                  revealAlt="Siva M - Childhood Photo"
+                  spotlightRadius={125}
                 />
-                <div className="hero-photo-overlay"></div>
               </div>
 
               {/* Status Badge floating at bottom of card */}

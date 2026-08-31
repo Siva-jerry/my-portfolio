@@ -21,8 +21,8 @@ function CyberOrbitAnimation() {
       >
         <defs>
           <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#00e5ff" stopOpacity="1" />
-            <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.8" />
+            <stop offset="0%" stopColor="#facc15" stopOpacity="1" />
+            <stop offset="100%" stopColor="#f97316" stopOpacity="0.85" />
           </radialGradient>
           <filter id="glowEffect" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="4" result="blur" />
@@ -36,7 +36,7 @@ function CyberOrbitAnimation() {
           cy="80"
           r="68"
           fill="none"
-          stroke="#00e5ff"
+          stroke="#facc15"
           strokeWidth="1.8"
           strokeDasharray="8 8"
           className="orbit-ring-outer"
@@ -48,7 +48,7 @@ function CyberOrbitAnimation() {
           cy="80"
           r="48"
           fill="none"
-          stroke="#8b5cf6"
+          stroke="#f97316"
           strokeWidth="2.2"
           strokeDasharray="6 6"
           className="orbit-ring-inner"
@@ -56,12 +56,12 @@ function CyberOrbitAnimation() {
 
         {/* Satellite Orbiting Dot 1 */}
         <g className="satellite-group-1">
-          <circle cx="80" cy="12" r="5.5" fill="#00e5ff" filter="url(#glowEffect)" />
+          <circle cx="80" cy="12" r="5.5" fill="#f59e0b" filter="url(#glowEffect)" />
         </g>
 
         {/* Satellite Orbiting Dot 2 */}
         <g className="satellite-group-2">
-          <circle cx="80" cy="148" r="4.5" fill="#a855f7" filter="url(#glowEffect)" />
+          <circle cx="80" cy="148" r="4.5" fill="#ea580c" filter="url(#glowEffect)" />
         </g>
 
         {/* Center Pulsating 4-Point Star */}

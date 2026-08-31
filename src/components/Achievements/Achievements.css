@@ -174,55 +174,55 @@
   color: #fbbf24;
 }
 
-/* Violet Theme */
+/* Flame Orange Theme */
 .theme-violet .achievement-icon-box {
-  background: rgba(139, 92, 246, 0.12);
-  color: #8b5cf6;
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(249, 115, 22, 0.12);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.3);
 }
 
 .theme-violet .ach-badge-primary {
-  background: rgba(139, 92, 246, 0.15);
-  color: #7c3aed;
-  border: 1px solid rgba(139, 92, 246, 0.35);
+  background: rgba(249, 115, 22, 0.15);
+  color: #ea580c;
+  border: 1px solid rgba(249, 115, 22, 0.35);
 }
 
 [data-theme="dark"] .theme-violet .ach-badge-primary {
-  color: #c084fc;
+  color: #fb923c;
 }
 
-/* Cyan / Sky Blue Theme */
+/* Radiant Electric Sun Theme */
 .theme-cyan .achievement-icon-box {
-  background: rgba(0, 229, 255, 0.12);
-  color: var(--sky-blue);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  background: rgba(250, 204, 21, 0.12);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.3);
 }
 
 .theme-cyan .ach-badge-primary {
-  background: rgba(0, 229, 255, 0.15);
-  color: var(--sky-blue-deep);
-  border: 1px solid rgba(0, 229, 255, 0.35);
+  background: rgba(250, 204, 21, 0.15);
+  color: #d97706;
+  border: 1px solid rgba(250, 204, 21, 0.35);
 }
 
 [data-theme="dark"] .theme-cyan .ach-badge-primary {
-  color: #38bdf8;
+  color: #fde047;
 }
 
-/* Emerald Theme */
+/* Deep Sunset Ember Theme */
 .theme-emerald .achievement-icon-box {
-  background: rgba(16, 185, 129, 0.12);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(234, 88, 12, 0.12);
+  color: #ea580c;
+  border: 1px solid rgba(234, 88, 12, 0.3);
 }
 
 .theme-emerald .ach-badge-primary {
-  background: rgba(16, 185, 129, 0.15);
-  color: #059669;
-  border: 1px solid rgba(16, 185, 129, 0.35);
+  background: rgba(234, 88, 12, 0.15);
+  color: #c2410c;
+  border: 1px solid rgba(234, 88, 12, 0.35);
 }
 
 [data-theme="dark"] .theme-emerald .ach-badge-primary {
-  color: #34d399;
+  color: #fdba74;
 }
 
 /* Responsive */

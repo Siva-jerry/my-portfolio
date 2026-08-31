@@ -9,19 +9,19 @@
 }
 
 /* ==========================================================================
-   Sky Blue & Purple Ambient Glow Mesh Orbs (Enhanced Rich Glow)
+   Yellow & Orange Ambient Glow Mesh Orbs (Cosmic Flame Glow)
    ========================================================================== */
 .ambient-glow-orb {
   position: absolute;
   border-radius: 50%;
   filter: blur(85px);
-  opacity: 0.65;
+  opacity: 0.6;
   pointer-events: none;
   animation: pulseOrb 10s ease-in-out infinite alternate;
 }
 
 [data-theme="light"] .ambient-glow-orb {
-  opacity: 0.55;
+  opacity: 0.45;
   filter: blur(100px);
 }
 
@@ -30,7 +30,7 @@
   left: -8%;
   width: 650px;
   height: 650px;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.65) 0%, rgba(56, 189, 248, 0.35) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.55) 0%, rgba(245, 158, 11, 0.3) 55%, transparent 75%);
 }
 
 .orb-purple-top-right {
@@ -38,7 +38,7 @@
   right: -10%;
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.6) 0%, rgba(139, 92, 246, 0.35) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.55) 0%, rgba(234, 88, 12, 0.3) 55%, transparent 75%);
   animation-delay: -3s;
 }
 
@@ -47,7 +47,7 @@
   left: 25%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.5) 0%, rgba(0, 229, 255, 0.38) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.45) 0%, rgba(249, 115, 22, 0.32) 55%, transparent 75%);
   animation-delay: -5s;
 }
 
@@ -56,7 +56,7 @@
   left: -12%;
   width: 650px;
   height: 650px;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.6) 0%, rgba(56, 189, 248, 0.35) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.55) 0%, rgba(245, 158, 11, 0.3) 55%, transparent 75%);
   animation-delay: -4s;
 }
 
@@ -65,7 +65,7 @@
   right: -8%;
   width: 680px;
   height: 680px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, rgba(124, 58, 237, 0.35) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.55) 0%, rgba(249, 115, 22, 0.3) 55%, transparent 75%);
   animation-delay: -7s;
 }
 
@@ -97,9 +97,7 @@
 .floating-tech-logo {
   position: absolute;
   bottom: -60px;
-  /* Start below viewport */
-  opacity: 0.2;
-  /* Low subtle opacity */
+  opacity: 0.22;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,11 +106,11 @@
 }
 
 [data-theme="light"] .floating-tech-logo {
-  opacity: 0.25;
+  opacity: 0.28;
 }
 
 [data-theme="dark"] .floating-tech-logo {
-  opacity: 0.18;
+  opacity: 0.2;
 }
 
 @keyframes riseSlowly {
@@ -122,7 +120,7 @@
   }
 
   8% {
-    opacity: 0.2;
+    opacity: 0.22;
   }
 
   50% {
@@ -130,7 +128,7 @@
   }
 
   92% {
-    opacity: 0.2;
+    opacity: 0.22;
   }
 
   100% {
@@ -141,7 +139,6 @@
 
 /* Pause animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
-
   .floating-tech-logo,
   .ambient-glow-orb {
     animation: none;

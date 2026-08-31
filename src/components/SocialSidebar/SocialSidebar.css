@@ -44,7 +44,7 @@
   color: #ffffff;
   background: var(--primary-gradient);
   border-color: transparent;
-  box-shadow: 0 10px 24px -4px rgba(0, 229, 255, 0.45);
+  box-shadow: 0 10px 24px -4px rgba(249, 115, 22, 0.45);
 }
 
 .social-sidebar-btn:hover .social-sidebar-icon {

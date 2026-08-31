@@ -6,12 +6,10 @@ import {
   FaGithub,
   FaLinkedinIn,
   FaInstagram,
-  FaPaperPlane,
   FaCopy,
   FaCheck,
   FaClock,
   FaBriefcase,
-  FaArrowRight,
 } from "react-icons/fa";
 import { FiSend, FiUser, FiMail, FiMessageSquare } from "react-icons/fi";
 
@@ -27,6 +25,7 @@ function Contact() {
 
   const handleCopyEmail = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     navigator.clipboard.writeText("sivajerry1433@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
@@ -90,14 +89,20 @@ function Contact() {
                 </div>
                 <div className="channel-content">
                   <span className="channel-label">Email Address</span>
-                  <a href="mailto:sivajerry1433@gmail.com" className="channel-value">
+                  <a
+                    href="mailto:sivajerry1433@gmail.com"
+                    className="channel-value email-link"
+                    title="Send email to sivajerry1433@gmail.com"
+                  >
                     sivajerry1433@gmail.com
                   </a>
                 </div>
                 <button
-                  className="channel-copy-btn"
+                  type="button"
+                  className={`channel-copy-btn ${copied ? "copied" : ""}`}
                   onClick={handleCopyEmail}
                   title="Copy email address"
+                  aria-label={copied ? "Email address copied" : "Copy email address"}
                 >
                   {copied ? <FaCheck className="copy-ok" /> : <FaCopy />}
                   <span className="copy-text">{copied ? "Copied!" : "Copy"}</span>
@@ -110,6 +115,7 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="channel-item glass-panel hoverable"
+                aria-label="Location: Rajapalayam, Tamil Nadu, India (opens in Google Maps)"
               >
                 <div className="channel-icon-box location">
                   <FaMapMarkerAlt />
@@ -118,7 +124,7 @@ function Contact() {
                   <span className="channel-label">Location</span>
                   <span className="channel-value">Rajapalayam, Tamil Nadu, India</span>
                 </div>
-                <span className="channel-link-arrow">↗</span>
+                <span className="channel-link-arrow" aria-hidden="true">↗</span>
               </a>
 
               {/* Social Channels Row */}
@@ -128,6 +134,7 @@ function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-contact-pill linkedin glass-panel"
+                  aria-label="LinkedIn Profile"
                 >
                   <FaLinkedinIn />
                   <span>LinkedIn</span>
@@ -138,6 +145,7 @@ function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-contact-pill github glass-panel"
+                  aria-label="GitHub Profile"
                 >
                   <FaGithub />
                   <span>GitHub</span>
@@ -148,6 +156,7 @@ function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-contact-pill instagram glass-panel"
+                  aria-label="Instagram Profile"
                 >
                   <FaInstagram />
                   <span>Instagram</span>
@@ -169,7 +178,7 @@ function Contact() {
               Fill out the form below to initiate an email conversation directly with me.
             </p>
 
-            <form onSubmit={handleSubmit} className="pro-contact-form">
+            <form onSubmit={handleSubmit} className="pro-contact-form" noValidate={false}>
               <div className="form-group">
                 <label htmlFor="contact-name">
                   <FiUser /> Your Name
@@ -179,6 +188,7 @@ function Contact() {
                   id="contact-name"
                   name="name"
                   required
+                  autoComplete="name"
                   placeholder="e.g. Alex Johnson"
                   value={formData.name}
                   onChange={handleChange}
@@ -195,6 +205,8 @@ function Contact() {
                   id="contact-email"
                   name="email"
                   required
+                  autoComplete="email"
+                  inputMode="email"
                   placeholder="e.g. alex@company.com"
                   value={formData.email}
                   onChange={handleChange}
@@ -206,19 +218,21 @@ function Contact() {
                 <label htmlFor="contact-subject">
                   <FaBriefcase /> Inquiring About
                 </label>
-                <select
-                  id="contact-subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="form-select"
-                >
-                  <option value="Full-Time Opportunity">Full-Time Software Engineer Role</option>
-                  <option value="Internship">Internship Opportunity</option>
-                  <option value="Freelance / Web Project">Web Application Project</option>
-                  <option value="Android Development">Android App Project</option>
-                  <option value="General Collaboration">General Collaboration & Inquiry</option>
-                </select>
+                <div className="select-wrapper">
+                  <select
+                    id="contact-subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="form-select"
+                  >
+                    <option value="Full-Time Opportunity">Full-Time Software Engineer Role</option>
+                    <option value="Internship">Internship Opportunity</option>
+                    <option value="Freelance / Web Project">Web Application Project</option>
+                    <option value="Android Development">Android App Project</option>
+                    <option value="General Collaboration">General Collaboration & Inquiry</option>
+                  </select>
+                </div>
               </div>
 
               <div className="form-group">
@@ -237,13 +251,13 @@ function Contact() {
                 ></textarea>
               </div>
 
-              <button type="submit" className="form-submit-btn">
+              <button type="submit" className="form-submit-btn" aria-label="Send Message">
                 <span>Send Message</span>
                 <FiSend className="send-arrow-ico" />
               </button>
 
               {submitted && (
-                <div className="form-success-toast">
+                <div className="form-success-toast" role="status" aria-live="polite">
                   <FaCheck /> Opening your email client to dispatch message!
                 </div>
               )}

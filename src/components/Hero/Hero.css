@@ -183,7 +183,7 @@
   width: 440px;
   height: 440px;
   border-radius: 50%;
-  border: 1.5px dashed rgba(0, 229, 255, 0.35);
+  border: 1.5px dashed rgba(250, 204, 21, 0.35);
   animation: rotateOrbital 40s linear infinite;
   pointer-events: none;
 }
@@ -197,7 +197,7 @@
   position: absolute;
   width: 360px;
   height: 460px;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.25) 0%, rgba(124, 58, 237, 0.22) 60%, transparent 80%);
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.28) 0%, rgba(249, 115, 22, 0.25) 60%, transparent 80%);
   filter: blur(40px);
   pointer-events: none;
   z-index: 0;
@@ -228,11 +228,11 @@
 /* Sparkle Stars */
 .sparkle-star {
   position: absolute;
-  color: var(--sky-blue);
+  color: var(--amber-yellow);
   font-size: 1.8rem;
   z-index: 10;
   animation: pulseSparkle 3s infinite;
-  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.6));
+  filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.6));
 }
 
 .star-top-left {
@@ -243,7 +243,7 @@
 .star-bottom-right {
   bottom: -16px;
   right: -16px;
-  color: var(--purple-light);
+  color: var(--accent-orange);
   animation-delay: 1.5s;
 }
 
@@ -282,7 +282,7 @@
 }
 
 [data-theme="light"] .hero-photo-overlay {
-  background: linear-gradient(180deg, transparent 70%, rgba(240, 246, 255, 0.6) 100%);
+  background: linear-gradient(180deg, transparent 70%, rgba(254, 243, 199, 0.6) 100%);
 }
 
 /* Status Badge */
@@ -296,10 +296,10 @@
   gap: 0.6rem;
   padding: 0.55rem 1.2rem;
   border-radius: var(--radius-full);
-  background: rgba(13, 18, 38, 0.85);
+  background: rgba(14, 14, 16, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  border: 1px solid rgba(250, 204, 21, 0.35);
   color: #ffffff;
   font-size: 0.82rem;
   font-weight: 700;
@@ -309,8 +309,8 @@
 }
 
 [data-theme="light"] .hero-card-status-badge {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(0, 229, 255, 0.6);
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(245, 158, 11, 0.5);
   color: var(--text-primary);
 }
 

@@ -96,7 +96,7 @@
   background: var(--primary-gradient);
   color: #ffffff;
   border-color: transparent;
-  box-shadow: 0 8px 24px -4px rgba(0, 229, 255, 0.45);
+  box-shadow: 0 8px 24px -4px rgba(249, 115, 22, 0.45);
   transform: translateY(-2px);
 }
 
@@ -135,7 +135,7 @@
 .cert-passport-card:hover {
   transform: translateY(-6px);
   border-color: var(--glass-border-hover);
-  box-shadow: 0 16px 36px -8px rgba(0, 229, 255, 0.18);
+  box-shadow: 0 16px 36px -8px rgba(249, 115, 22, 0.22);
 }
 
 /* Topbar */

@@ -17,25 +17,25 @@ const pillars = [
     icon: <FaCode />,
     title: "Full Stack Web Engineering",
     desc: "React.js, Node.js, Express, RESTful APIs, and modern responsive design.",
-    color: "#00e5ff",
+    color: "#f59e0b",
   },
   {
     icon: <FaMobileAlt />,
     title: "Native Android Development",
     desc: "Java, Android Studio, Firebase Firestore, and real-time push notifications.",
-    color: "#38bdf8",
+    color: "#f97316",
   },
   {
     icon: <FaRobot />,
     title: "Artificial Intelligence & LLMs",
     desc: "Gemini AI integration, prompt engineering, intelligent search, and automation.",
-    color: "#8b5cf6",
+    color: "#fbbf24",
   },
   {
     icon: <FaBolt />,
     title: "Clean Code & UI/UX Craft",
     desc: "Maintainable architectures, micro-interactions, high performance, and accessibility.",
-    color: "#7c3aed",
+    color: "#ea580c",
   },
 ];
 

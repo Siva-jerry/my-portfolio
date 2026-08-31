@@ -7,25 +7,25 @@ function HeroStats() {
       icon: <FaGraduationCap />,
       value: "B.Tech",
       label: "IT Student (Final Year)",
-      color: "#8b5cf6",
+      color: "#f59e0b",
     },
     {
       icon: <FaFolderOpen />,
       value: "8+",
       label: "Featured Projects",
-      color: "#3b82f6",
+      color: "#f97316",
     },
     {
       icon: <FaCertificate />,
       value: "20+",
       label: "Certifications",
-      color: "#a855f7",
+      color: "#fbbf24",
     },
     {
       icon: <FaCode />,
       value: "MERN & AI",
       label: "Full Stack Developer",
-      color: "#ec4899",
+      color: "#ea580c",
     },
   ];
 

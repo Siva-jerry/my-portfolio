@@ -7,7 +7,7 @@ const socialLinks = [
     name: "GitHub",
     icon: <FaGithub />,
     url: "https://github.com/Siva-jerry",
-    color: "#7c3aed",
+    color: "#f59e0b",
   },
   {
     name: "LinkedIn",
