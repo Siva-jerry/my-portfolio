@@ -6,7 +6,7 @@ import { BsStars } from "react-icons/bs";
  * CursorMaskReveal Component
  * Stacks two distinct images directly on top of each other:
  * - Base (Main) Image: profile.jpeg
- * - Reveal (Back) Image: profile-back.png (visible only inside the spotlight cursor mask)
+ * - Reveal (Back) Image: profile-back.jpg (visible only inside the spotlight cursor mask)
  *
  * Tracks user cursor/touch coordinates and applies inline CSS `clip-path: circle(radius at x y)`
  * with smooth easing on hover/drag and an idle auto-scan fallback.
@@ -19,12 +19,32 @@ function CursorMaskReveal({
   spotlightRadius = 125,
 }) {
   const containerRef = useRef(null);
-  const [coords, setCoords] = useState({ x: 170, y: 200 });
+  const [coords, setCoords] = useState({ x: 140, y: 170 });
   const [isHovered, setIsHovered] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [isAutoScanning, setIsAutoScanning] = useState(true);
+  const [containerSize, setContainerSize] = useState({ width: 280, height: 360 });
   const animFrameRef = useRef(null);
   const autoScanStartTime = useRef(Date.now());
+
+  // Track container dimensions and initialize center coordinates
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (containerRef.current) {
+        const w = containerRef.current.offsetWidth || 280;
+        const h = containerRef.current.offsetHeight || 360;
+        setContainerSize({ width: w, height: h });
+        setCoords((prev) => ({
+          x: Math.min(prev.x || w / 2, w),
+          y: Math.min(prev.y || h / 2, h),
+        }));
+      }
+    };
+
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
 
   // Gentle auto-scan floating spotlight when idle
   useEffect(() => {
@@ -38,11 +58,11 @@ function CursorMaskReveal({
       if (!isMounted || isHovered) return;
 
       const elapsed = (Date.now() - autoScanStartTime.current) / 1000;
-      const width = containerRef.current?.offsetWidth || 320;
-      const height = containerRef.current?.offsetHeight || 420;
+      const width = containerRef.current?.offsetWidth || containerSize.width || 280;
+      const height = containerRef.current?.offsetHeight || containerSize.height || 360;
 
-      const cx = width / 2 + Math.sin(elapsed * 0.95) * (width * 0.28);
-      const cy = height / 2 + Math.cos(elapsed * 1.35) * (height * 0.24);
+      const cx = width / 2 + Math.sin(elapsed * 0.95) * (width * 0.24);
+      const cy = height / 2 + Math.cos(elapsed * 1.35) * (height * 0.22);
 
       setCoords({ x: cx, y: cy });
       setIsAutoScanning(true);
@@ -56,7 +76,7 @@ function CursorMaskReveal({
       isMounted = false;
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
     };
-  }, [isHovered]);
+  }, [isHovered, containerSize.width, containerSize.height]);
 
   // Mouse Move Handler
   const handleMouseMove = useCallback((e) => {
@@ -120,8 +140,10 @@ function CursorMaskReveal({
     }, 1800);
   }, []);
 
-  // Active spotlight radius based on hover / auto-scan state
-  const currentRadius = isHovered ? spotlightRadius : isAutoScanning ? 85 : 0;
+  // Active spotlight radius based on hover / auto-scan state and container size
+  const effectiveSpotlightRadius = Math.min(spotlightRadius, containerSize.width * 0.38);
+  const effectiveAutoScanRadius = Math.min(85, containerSize.width * 0.28);
+  const currentRadius = isHovered ? effectiveSpotlightRadius : isAutoScanning ? effectiveAutoScanRadius : 0;
 
   // Inline CSS clip-path for spotlight reveal of the 2nd (back) image
   const maskStyle = {
@@ -156,7 +178,7 @@ function CursorMaskReveal({
         <div className="mask-base-vignette"></div>
       </div>
 
-      {/* 2. Top Reveal Image (profile-back.png) Revealed ONLY by the cursor mask spotlight */}
+      {/* 2. Top Reveal Image (profile-back.jpg) Revealed ONLY by the cursor mask spotlight */}
       <div className="mask-layer mask-reveal-layer" style={maskStyle}>
         <img
           src={backImageSrc}

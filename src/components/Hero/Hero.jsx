@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 import { FiArrowRight, FiDownload } from "react-icons/fi";
 import { BsStars } from "react-icons/bs";
 import profileImg from "../../assets/images/profile.jpeg";
-import profileBackImg from "../../assets/images/profile-back.png";
+import profileBackImg from "../../assets/images/profile-back.jpg";
 import HeroStats from "./HeroStats";
 import CursorMaskReveal from "./CursorMaskReveal";
 
@@ -44,7 +44,7 @@ function Hero() {
             </div>
 
             <p className="hero-description">
-              Crafting modern, scalable and beautiful digital experiences using modern frontend & full stack technologies. 
+              Crafting modern, scalable and beautiful digital experiences using modern frontend & full stack technologies.
               Passionate about solving real-world problems through clean code, elegant UI and high-performance applications.
             </p>
 

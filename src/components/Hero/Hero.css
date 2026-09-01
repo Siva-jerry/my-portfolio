@@ -176,6 +176,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .hero-orbital-ring {
@@ -206,8 +207,7 @@
 /* Glass Card */
 .hero-card-container {
   position: relative;
-  width: 100%;
-  max-width: 360px;
+  width: min(100%, 360px);
   height: 460px;
   border-radius: 36px;
   padding: 12px;
@@ -218,6 +218,7 @@
   z-index: 1;
   overflow: visible;
   transition: all 0.4s ease;
+  flex-shrink: 0;
 }
 
 .hero-card-container:hover {
@@ -404,16 +405,19 @@
   .hero-visual {
     order: 2;
     margin: 1rem auto;
+    width: 100%;
   }
 
   .hero-card-container {
-    height: 380px;
-    max-width: 300px;
+    width: 320px;
+    max-width: 85vw;
+    height: 400px;
+    flex-shrink: 0;
   }
 
   .hero-orbital-ring {
-    width: 340px;
-    height: 340px;
+    width: 360px;
+    height: 360px;
   }
 
   .hero-stats-grid {
@@ -478,31 +482,53 @@
     font-size: 0.9rem;
   }
 
-  .hero-card-container {
-    height: 280px;
-    max-width: 230px;
-    border-radius: 22px;
-    padding: 6px;
+  .hero-visual {
+    width: 100%;
     margin: 0.5rem auto;
   }
 
+  .hero-card-container {
+    width: 260px;
+    max-width: 82vw;
+    height: 330px;
+    border-radius: 24px;
+    padding: 8px;
+    margin: 0.5rem auto;
+    flex-shrink: 0;
+  }
+
   .hero-photo-wrapper {
-    border-radius: 16px;
+    border-radius: 18px;
   }
 
   .hero-orbital-ring {
-    width: 245px;
-    height: 245px;
+    width: 290px;
+    height: 290px;
+  }
+
+  .hero-glow-mesh {
+    width: 260px;
+    height: 330px;
   }
 
   .sparkle-star {
     font-size: 1.3rem;
   }
 
+  .star-top-left {
+    top: -12px;
+    left: -12px;
+  }
+
+  .star-bottom-right {
+    bottom: -12px;
+    right: -12px;
+  }
+
   .hero-card-status-badge {
-    font-size: 0.7rem;
-    padding: 0.32rem 0.75rem;
-    bottom: 10px;
+    font-size: 0.72rem;
+    padding: 0.35rem 0.85rem;
+    bottom: 14px;
   }
 
   .hero-stats-grid {
