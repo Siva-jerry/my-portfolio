@@ -30,16 +30,13 @@
   height: 52px;
   border-radius: 16px;
   background: var(--tag-bg);
-  color: var(--sky-blue);
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.6rem;
   flex-shrink: 0;
-}
-
-[data-theme="light"] .stat-capsule-icon {
-  color: var(--sky-blue-deep);
+  border: 1px solid var(--glass-border);
 }
 
 .stat-capsule-info {
@@ -83,7 +80,7 @@
 .achievement-card:hover {
   transform: translateY(-8px);
   border-color: var(--glass-border-hover);
-  box-shadow: var(--glass-shadow-hover);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.35);
 }
 
 .achievement-card-top {
@@ -103,6 +100,9 @@
   justify-content: center;
   font-size: 1.8rem;
   flex-shrink: 0;
+  background: var(--tag-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
   transition: transform 0.35s ease;
 }
 
@@ -124,6 +124,9 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  background: var(--card-bg-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
 }
 
 .ach-badge-prize {
@@ -131,9 +134,9 @@
   border-radius: var(--radius-full);
   font-size: 0.75rem;
   font-weight: 700;
-  background: var(--card-bg-subtle);
+  background: var(--tag-bg);
   border: 1px solid var(--glass-border);
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 .achievement-title {
@@ -157,72 +160,76 @@
 }
 
 /* Card Themes */
-/* Gold / Amber */
+/* Gold / Amber - APPATHON 1st Place */
 .theme-gold .achievement-icon-box {
-  background: rgba(245, 158, 11, 0.12);
+  background: rgba(245, 158, 11, 0.15);
   color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  border: 1px solid rgba(245, 158, 11, 0.4);
 }
 
 .theme-gold .ach-badge-primary {
   background: rgba(245, 158, 11, 0.15);
-  color: #d97706;
-  border: 1px solid rgba(245, 158, 11, 0.35);
-}
-
-[data-theme="dark"] .theme-gold .ach-badge-primary {
   color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
 }
 
-/* Flame Orange Theme */
+.theme-gold:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 16px 36px -8px rgba(245, 158, 11, 0.3);
+}
+
+/* Electric Violet Theme - Techathon 1st Place */
 .theme-violet .achievement-icon-box {
-  background: rgba(249, 115, 22, 0.12);
-  color: #f97316;
-  border: 1px solid rgba(249, 115, 22, 0.3);
+  background: rgba(168, 85, 247, 0.15);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.4);
 }
 
 .theme-violet .ach-badge-primary {
-  background: rgba(249, 115, 22, 0.15);
-  color: #ea580c;
-  border: 1px solid rgba(249, 115, 22, 0.35);
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.4);
 }
 
-[data-theme="dark"] .theme-violet .ach-badge-primary {
-  color: #fb923c;
+.theme-violet:hover {
+  border-color: #a855f7;
+  box-shadow: 0 16px 36px -8px rgba(168, 85, 247, 0.3);
 }
 
-/* Radiant Electric Sun Theme */
+/* Radiant Cyan Theme - Project Expo */
 .theme-cyan .achievement-icon-box {
-  background: rgba(250, 204, 21, 0.12);
-  color: #facc15;
-  border: 1px solid rgba(250, 204, 21, 0.3);
+  background: rgba(6, 182, 212, 0.15);
+  color: #06b6d4;
+  border: 1px solid rgba(6, 182, 212, 0.4);
 }
 
 .theme-cyan .ach-badge-primary {
-  background: rgba(250, 204, 21, 0.15);
-  color: #d97706;
-  border: 1px solid rgba(250, 204, 21, 0.35);
+  background: rgba(6, 182, 212, 0.15);
+  color: #22d3ee;
+  border: 1px solid rgba(6, 182, 212, 0.4);
 }
 
-[data-theme="dark"] .theme-cyan .ach-badge-primary {
-  color: #fde047;
+.theme-cyan:hover {
+  border-color: #06b6d4;
+  box-shadow: 0 16px 36px -8px rgba(6, 182, 212, 0.3);
 }
 
-/* Deep Sunset Ember Theme */
+/* Deep Emerald Theme - 20+ Certifications */
 .theme-emerald .achievement-icon-box {
-  background: rgba(234, 88, 12, 0.12);
-  color: #ea580c;
-  border: 1px solid rgba(234, 88, 12, 0.3);
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
 }
 
 .theme-emerald .ach-badge-primary {
-  background: rgba(234, 88, 12, 0.15);
-  color: #c2410c;
-  border: 1px solid rgba(234, 88, 12, 0.35);
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
 }
 
-[data-theme="dark"] .theme-emerald .ach-badge-primary {
-  color: #fdba74;
+.theme-emerald:hover {
+  border-color: #10b981;
+  box-shadow: 0 16px 36px -8px rgba(16, 185, 129, 0.3);
 }
 
 /* Responsive */

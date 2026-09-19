@@ -18,7 +18,6 @@ const achievements = [
     institution: "SNS College of Technology",
     description:
       "Secured 1st Place in state-level APPATHON 2026 for building an innovative high-impact mobile & cloud software solution.",
-    theme: "gold",
   },
   {
     icon: <FaAward />,
@@ -28,7 +27,6 @@ const achievements = [
     institution: "J.P. College of Engineering",
     description:
       "Won 1st Place in the IT Department Project Expo with an outstanding demonstration of real-time application architecture.",
-    theme: "violet",
   },
   {
     icon: <FaRocket />,
@@ -38,7 +36,6 @@ const achievements = [
     institution: "National Level Symposium",
     description:
       "Presented innovative software solutions, engaging in live technical defenses and demonstrating full-stack engineering principles.",
-    theme: "cyan",
   },
   {
     icon: <FaCertificate />,
@@ -48,7 +45,6 @@ const achievements = [
     institution: "IBM • Infosys • NoviTech • Edunet",
     description:
       "Completed rigorous certified coursework across Artificial Intelligence, React.js, Full Stack, Data Science, and DevOps.",
-    theme: "emerald",
   },
 ];
 
@@ -60,18 +56,20 @@ function Achievements() {
         <div className="section-header">
           <div className="section-badge">🏆 Honors & Recognition</div>
           <h2 className="section-title">
-            Achievements & <span>Awards</span>
+            Key <span>Achievements</span>
           </h2>
           <p className="section-subtitle">
-            Recognitions and milestones earned through hackathons, technical symposia, and consistent project innovation.
+            Demonstrated engineering excellence through competitive hackathons, department honors, and certified mastery.
           </p>
         </div>
 
-        {/* Highlight Stats Row */}
+        {/* Stats Strip */}
         <div className="achievement-stats-row">
           {stats.map((item, index) => (
             <div className="stat-capsule glass-panel" key={index}>
-              <div className="stat-capsule-icon">{item.icon}</div>
+              <div className="stat-capsule-icon">
+                {item.icon}
+              </div>
               <div className="stat-capsule-info">
                 <span className="stat-capsule-num">{item.value}</span>
                 <span className="stat-capsule-label">{item.label}</span>
@@ -80,19 +78,22 @@ function Achievements() {
           ))}
         </div>
 
-        {/* Achievements Cards Grid */}
+        {/* Cards Grid */}
         <div className="achievements-grid">
           {achievements.map((item, index) => (
-            <div className={`achievement-card glass-panel theme-${item.theme}`} key={index}>
+            <div
+              className="achievement-card glass-panel"
+              key={index}
+            >
               <div className="achievement-card-top">
-                <div className="achievement-icon-box">{item.icon}</div>
-                <div className="achievement-badges">
-                  <span className="ach-badge-primary">{item.badge}</span>
-                  <span className="ach-badge-prize">{item.prize}</span>
+                <div className="achievement-icon-box">
+                  {item.icon}
                 </div>
+                <div className="achievement-badge-pill">{item.badge}</div>
               </div>
 
               <div className="achievement-card-body">
+                <div className="achievement-prize-tag">{item.prize}</div>
                 <h3 className="achievement-title">{item.title}</h3>
                 <h4 className="achievement-institution">{item.institution}</h4>
                 <p className="achievement-desc">{item.description}</p>

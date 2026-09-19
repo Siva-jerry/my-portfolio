@@ -41,19 +41,16 @@
 .skills-cat-btn:hover {
   background: var(--card-bg-hover);
   border-color: var(--glass-border-hover);
-  color: var(--sky-blue);
+  color: var(--text-primary);
   transform: translateY(-2px);
-}
-
-[data-theme="light"] .skills-cat-btn:hover {
-  color: var(--sky-blue-deep);
 }
 
 .skills-cat-btn.active {
   background: var(--primary-gradient);
   color: #ffffff;
+  font-weight: 800;
   border-color: transparent;
-  box-shadow: 0 8px 24px -4px rgba(249, 115, 22, 0.45);
+  box-shadow: var(--button-glow);
   transform: translateY(-2px);
 }
 
@@ -92,11 +89,15 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--skill-accent, #f59e0b) 0%, transparent 70%);
-  opacity: 0.08;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  opacity: 0.05;
   filter: blur(20px);
   pointer-events: none;
   transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+[data-theme="light"] .skill-card-glow {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.08) 0%, transparent 70%);
 }
 
 .skill-modern-card:hover .skill-card-glow {
@@ -107,7 +108,7 @@
 .skill-modern-card:hover {
   transform: translateY(-6px);
   border-color: var(--glass-border-hover);
-  box-shadow: 0 16px 36px -8px rgba(249, 115, 22, 0.2);
+  box-shadow: var(--glass-shadow-hover);
 }
 
 /* Top Row: Elevated Icon & Category Tag */
@@ -122,7 +123,9 @@
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  border: 1px solid;
+  border: 1px solid var(--tag-border);
+  background: var(--tag-bg);
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,14 +168,6 @@
   transition: color 0.25s ease;
 }
 
-.skill-modern-card:hover .skill-card-name {
-  color: var(--sky-blue);
-}
-
-[data-theme="light"] .skill-modern-card:hover .skill-card-name {
-  color: var(--sky-blue-deep);
-}
-
 .skill-hover-arrow {
   font-size: 1.1rem;
   color: var(--text-muted);
@@ -185,11 +180,7 @@
 .skill-modern-card:hover .skill-hover-arrow {
   opacity: 1;
   transform: translate(0, 0);
-  color: var(--sky-blue);
-}
-
-[data-theme="light"] .skill-modern-card:hover .skill-hover-arrow {
-  color: var(--sky-blue-deep);
+  color: var(--text-primary);
 }
 
 /* ==========================================================================

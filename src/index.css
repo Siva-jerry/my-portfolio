@@ -127,7 +127,7 @@ section {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.25);
 }
 
 .section-title {
@@ -143,6 +143,7 @@ section {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.35));
 }
 
 .section-subtitle {

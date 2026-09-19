@@ -1,420 +1,652 @@
-.projects-section {
-  padding: 100px 0 80px;
+/* ==========================================================================
+   Lamborghini-Inspired Project Showcase Section (Cinematic Transparent Showroom)
+   ========================================================================== */
+
+.lambo-showcase-section {
+  padding: 90px 0 80px;
   position: relative;
+  overflow: hidden;
+  user-select: none;
 }
 
-/* Category Switcher Tabs */
-.project-category-tabs {
+.lambo-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.85rem;
-  margin-bottom: 3.5rem;
-}
-
-.project-cat-btn {
-  display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.65rem 1.4rem;
-  border-radius: var(--radius-full);
-  background: var(--card-bg-subtle);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  font-weight: 700;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  text-align: center;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
-.p-count-pill {
-  font-size: 0.75rem;
-  padding: 0.15rem 0.55rem;
-  border-radius: var(--radius-full);
-  background: var(--card-bg);
-  border: 1px solid var(--glass-border);
-  color: var(--text-primary);
-  transition: all 0.3s ease;
-}
-
-.project-cat-btn:hover {
-  color: var(--text-primary);
-  background: var(--card-bg-hover);
-  border-color: var(--glass-border-hover);
-  transform: translateY(-2px);
-}
-
-.project-cat-btn.active {
-  background: var(--primary-gradient);
-  color: #ffffff;
-  border-color: transparent;
-  box-shadow: 0 8px 24px -4px rgba(249, 115, 22, 0.45);
-  transform: translateY(-2px);
-}
-
-.project-cat-btn.active .p-count-pill {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: transparent;
-  color: #ffffff;
-}
-
-/* 2-Column Showcase Grid */
-.projects-showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
-  gap: 2.5rem;
-  width: 100%;
-}
-
-.project-showcase-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: var(--radius-xl);
-  padding: 1.4rem;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.project-showcase-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--glass-border-hover);
-  box-shadow: var(--glass-shadow-hover);
-}
-
-/* BROWSER WINDOW MOCKUP WITH STRICT FIXED-SIZE VIEWPORT */
-.project-viewport-window {
-  width: 100%;
-  height: 250px; /* STRICT UNIFORM FIXED HEIGHT ACROSS ALL CARDS */
-  background: var(--img-frame-bg);
-  border: 1px solid var(--img-frame-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-}
-
-/* Window Header Bar (macOS style) */
-.viewport-header-bar {
-  height: 36px;
+/* ==========================================================================
+   1. Top Navigation Row: Left Hex, Model Brand Header, Right Hex
+   ========================================================================== */
+.lambo-top-nav-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0.9rem;
-  background: rgba(0, 0, 0, 0.06);
-  border-bottom: 1px solid var(--img-frame-border);
-  gap: 0.5rem;
-}
-
-[data-theme="dark"] .viewport-header-bar {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.viewport-traffic-dots {
-  display: flex;
-  gap: 6px;
-  flex-shrink: 0;
-}
-
-.v-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-}
-
-.dot-close { background: #ef4444; }
-.dot-min { background: #f59e0b; }
-.dot-max { background: #10b981; }
-
-.viewport-address-slug {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.2rem 0.75rem;
-  border-radius: var(--radius-full);
-  background: var(--card-bg-subtle);
-  border: 1px solid var(--glass-border);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-family: monospace;
-  max-width: 220px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.viewport-status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  flex-shrink: 0;
-}
-
-.v-live-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--amber-yellow);
-  box-shadow: 0 0 6px var(--amber-yellow);
-}
-
-/* STRICT FIXED-SIZE CANVAS WITH OBJECT-FIT CONTAIN (100% FULL IMAGE VIEW) */
-.project-viewport-canvas {
   width: 100%;
-  height: calc(100% - 36px);
+  max-width: 1100px;
+  margin: 1.2rem auto 1rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Hexagonal Navigation Buttons (Lamborghini Style) */
+.lambo-hex-btn {
+  position: relative;
+  width: 56px;
+  height: 64px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  overflow: hidden;
-  position: relative;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 0;
+  outline: none;
 }
 
-.project-mockup-img {
+.lambo-hex-svg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* 100% VISIBLE WITH NO CLIPPING */
-  border-radius: 6px;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  fill: var(--card-bg-subtle);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
 }
 
-.project-showcase-card:hover .project-mockup-img {
-  transform: scale(1.04);
+.lambo-hex-polygon {
+  stroke: var(--glass-border);
+  stroke-width: 1.8;
+  transition: all 0.3s ease;
 }
 
-/* Card Content Block */
-.project-content-block {
+.lambo-hex-arrow {
+  position: relative;
+  z-index: 2;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--text-primary);
+  font-weight: 300;
+  transition: transform 0.25s ease, color 0.25s ease;
+  margin-top: -4px;
+}
+
+.lambo-hex-btn:hover {
+  transform: scale(1.12);
+}
+
+.lambo-hex-btn:hover .lambo-hex-svg {
+  fill: var(--card-bg-hover);
+  filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.45));
+}
+
+.lambo-hex-btn:hover .lambo-hex-polygon {
+  stroke: var(--primary);
+}
+
+.lambo-hex-btn:hover .lambo-hex-arrow {
+  color: var(--primary);
+}
+
+.lambo-hex-btn:active {
+  transform: scale(0.95);
+}
+
+/* Centered Model Brand Header & Racing Tri-Stripe */
+.lambo-brand-header {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  align-items: center;
+  gap: 0.35rem;
 }
 
-.project-headline-row {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  margin-bottom: 0.65rem;
-}
-
-.project-number-tag {
-  font-size: 1.1rem;
+.lambo-brand-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3.4vw, 2.4rem);
   font-weight: 900;
-  color: var(--sky-blue);
+  letter-spacing: 0.3em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 0 24px rgba(56, 189, 248, 0.25);
+}
+
+/* Luminous Tech Racing Stripe (Cyan - White - Indigo) */
+.lambo-racing-stripe {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: 140px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+}
+
+.stripe-cyan {
+  flex: 1;
+  height: 100%;
+  background: #38bdf8;
+}
+
+.stripe-white {
+  flex: 1;
+  height: 100%;
+  background: #ffffff;
+}
+
+.stripe-indigo {
+  flex: 1;
+  height: 100%;
+  background: #818cf8;
+}
+
+.lambo-model-code {
+  font-size: 0.74rem;
+  font-family: monospace;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 0.1rem;
+}
+
+/* ==========================================================================
+   2. Hero Condensed Statement / Slogan
+   ========================================================================== */
+.lambo-headline-wrap {
+  margin: 1.2rem auto 1.8rem;
+  max-width: 980px;
+  padding: 0 1.5rem;
+}
+
+.lambo-hero-slogan {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4.8vw, 3.6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  line-height: 1.05;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(180deg, var(--text-primary) 30%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lambo-hero-subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   3. Center 3D Project Showcase Stage (CINEMATIC NO-BOX SHOWROOM)
+   ========================================================================== */
+.lambo-stage-viewport {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+  margin: 0.5rem 0 1.5rem;
+  touch-action: pan-y;
+  overflow: visible;
+}
+
+.lambo-stage-vehicle {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Active Center Hero Vehicle (No Box, Pure Transparent Presence) */
+.lambo-stage-vehicle.vehicle-active {
+  z-index: 5;
+  width: min(840px, 86vw);
+  height: 390px;
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  cursor: default;
+}
+
+.lambo-active-vehicle-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ambient Studio Backdrop Spotlight behind Active Vehicle */
+.lambo-vehicle-spotlight {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  max-width: 650px;
+  max-height: 280px;
+  background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.14) 0%, rgba(99, 102, 241, 0.07) 45%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(32px);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+[data-theme="light"] .lambo-vehicle-spotlight {
+  background: radial-gradient(ellipse at center, rgba(2, 132, 199, 0.08) 0%, rgba(99, 102, 241, 0.04) 45%, transparent 70%);
+}
+
+/* Left Peek Vehicle */
+.lambo-stage-vehicle.vehicle-prev {
+  z-index: 2;
+  width: min(560px, 60vw);
+  height: 290px;
+  transform: translateX(-70%) scale(0.78);
+  opacity: 0.32;
+  filter: blur(1.5px) grayscale(30%);
+}
+
+.lambo-stage-vehicle.vehicle-prev:hover {
+  opacity: 0.75;
+  filter: blur(0px) grayscale(0%);
+  transform: translateX(-66%) scale(0.82);
+}
+
+/* Right Peek Vehicle */
+.lambo-stage-vehicle.vehicle-next {
+  z-index: 2;
+  width: min(560px, 60vw);
+  height: 290px;
+  transform: translateX(70%) scale(0.78);
+  opacity: 0.32;
+  filter: blur(1.5px) grayscale(30%);
+}
+
+.lambo-stage-vehicle.vehicle-next:hover {
+  opacity: 0.75;
+  filter: blur(0px) grayscale(0%);
+  transform: translateX(66%) scale(0.82);
+}
+
+/* Vehicle Transparent Image Rendering */
+.lambo-vehicle-img {
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.55));
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease;
+  pointer-events: auto;
+}
+
+.vehicle-active:hover .lambo-vehicle-img {
+  transform: scale(1.035) translateY(-4px);
+  filter: drop-shadow(0 24px 38px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 25px rgba(56, 189, 248, 0.2));
+}
+
+/* Realistic Ground Floor Shadow & Ambient Contact Shadow */
+.lambo-vehicle-ground-shadow {
+  width: 78%;
+  height: 32px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.75) 0%, rgba(56, 189, 248, 0.18) 35%, transparent 75%);
+  border-radius: 50%;
+  filter: blur(12px);
+  margin-top: -16px;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.hero-shadow {
+  width: 85%;
+  height: 40px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.85) 0%, rgba(56, 189, 248, 0.25) 30%, transparent 75%);
+  filter: blur(14px);
+  margin-top: -20px;
+}
+
+[data-theme="light"] .lambo-vehicle-ground-shadow {
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(2, 132, 199, 0.12) 35%, transparent 70%);
+}
+
+[data-theme="light"] .hero-shadow {
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.42) 0%, rgba(2, 132, 199, 0.15) 35%, transparent 70%);
+}
+
+/* ==========================================================================
+   4. Sub-Model Variant Switcher Tabs (Lamborghini Sub-variant style)
+   ========================================================================== */
+.lambo-variant-tabs-strip {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0.5rem auto 1.8rem;
+  padding: 0 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.lambo-variant-tabs-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.lambo-variant-tabs-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  min-width: max-content;
+  padding-bottom: 8px;
+}
+
+.lambo-variant-tab {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  padding: 0.4rem 0.2rem 0.8rem;
+  transition: all 0.25s ease;
   font-family: var(--font-heading);
 }
 
-[data-theme="light"] .project-number-tag {
-  color: var(--sky-blue-deep);
-}
-
-.project-title-text {
-  font-size: 1.35rem;
-  font-weight: 800;
+.lambo-variant-tab:hover {
   color: var(--text-primary);
-  line-height: 1.25;
-  transition: color 0.25s ease;
 }
 
-.project-showcase-card:hover .project-title-text {
-  color: var(--sky-blue);
+.lambo-variant-tab.is-active {
+  color: var(--text-primary);
 }
 
-[data-theme="light"] .project-showcase-card:hover .project-title-text {
-  color: var(--sky-blue-deep);
+.tab-active-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+  box-shadow: 0 0 12px var(--primary);
 }
 
-.project-summary-text {
+/* ==========================================================================
+   5. Project Description & Tech Chips
+   ========================================================================== */
+.lambo-description-block {
+  max-width: 860px;
+  margin: 0 auto 2.2rem;
+  padding: 0 1.5rem;
+}
+
+.lambo-desc-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin-bottom: 1.25rem;
-  flex-grow: 1;
+  margin-bottom: 1.4rem;
 }
 
-/* Tech Badges */
-.project-tech-badges {
+.lambo-tech-chips {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.6rem;
 }
 
-.tech-badge-item {
+.chips-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 0.3rem;
+}
+
+.lambo-chip {
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
   background: var(--tag-bg);
   border: 1px solid var(--tag-border);
-  color: var(--tag-color);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-/* Action Buttons */
-.project-action-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: auto;
-}
-
-.p-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1.35rem;
-  border-radius: var(--radius-full);
-  font-size: 0.88rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.p-btn-arr {
-  font-size: 1.05rem;
-  transition: transform 0.25s ease;
-}
-
-.p-btn-primary {
-  background: var(--primary-gradient);
-  color: #ffffff;
-  box-shadow: 0 6px 18px -4px rgba(249, 115, 22, 0.4);
-}
-
-.p-btn-primary:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 10px 24px -4px rgba(234, 88, 12, 0.45);
-}
-
-.p-btn-primary:hover .p-btn-arr {
-  transform: translate(2px, -2px);
-}
-
-.p-btn-outline {
-  background: var(--card-bg-subtle);
-  border: 1px solid var(--glass-border);
   color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
 }
 
-.p-btn-outline:hover {
+.lambo-chip:hover {
   background: var(--card-bg-hover);
-  border-color: var(--glass-border-hover);
-  color: var(--sky-blue);
+  border-color: var(--primary);
   transform: translateY(-2px);
 }
 
-[data-theme="light"] .p-btn-outline:hover {
-  color: var(--sky-blue-deep);
+/* ==========================================================================
+   6. Hypercar Action Buttons Row (Lamborghini CTA Bar)
+   ========================================================================== */
+.lambo-action-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
 }
 
-/* Responsive */
-@media (max-width: 1080px) {
-  .projects-showcase-grid {
-    grid-template-columns: 1fr;
+/* Lamborghini Primary Gold/Cyan Angular CTA Button */
+.lambo-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.95rem 2.6rem;
+  background: var(--primary-gradient);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--button-glow);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.lambo-btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--button-glow-hover);
+  color: #ffffff;
+}
+
+.lambo-btn-arrow {
+  font-size: 1.15rem;
+  transition: transform 0.25s ease;
+}
+
+.lambo-btn-primary:hover .lambo-btn-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* Secondary Sleek Outline Button */
+.lambo-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.8rem;
+  background: var(--card-bg-subtle);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--glass-border);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.lambo-btn-secondary:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+}
+
+/* ==========================================================================
+   7. Bottom Telemetry Specifications Strip (Lamborghini Spec Line style)
+   ========================================================================== */
+.lambo-specs-telemetry-bar {
+  width: 100%;
+  max-width: 1020px;
+  padding: 1.2rem 1.8rem;
+  border-top: 1px solid var(--glass-border);
+  margin-top: 1rem;
+}
+
+.lambo-specs-text {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 900px) {
+  .lambo-showcase-section {
+    padding: 80px 0 60px;
+  }
+
+  .lambo-stage-viewport {
+    height: 360px;
+  }
+
+  .lambo-stage-vehicle.vehicle-active {
+    height: 320px;
+    width: min(680px, 90vw);
+  }
+
+  .lambo-vehicle-img {
+    max-height: 270px;
+  }
+
+  .lambo-stage-vehicle.vehicle-prev {
+    transform: translateX(-78%) scale(0.72);
+  }
+
+  .lambo-stage-vehicle.vehicle-next {
+    transform: translateX(78%) scale(0.72);
+  }
+
+  .lambo-variant-tabs-list {
+    justify-content: flex-start;
+    gap: 1.2rem;
   }
 }
 
 @media (max-width: 600px) {
-  .projects-section {
-    padding: 48px 0 24px;
+  .lambo-showcase-section {
+    padding: 60px 0 40px;
   }
 
-  .projects-category-nav {
-    gap: 0.4rem;
-    margin-bottom: 1.5rem;
+  .lambo-top-nav-row {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
   }
 
-  .project-tab-btn {
-    padding: 0.4rem 0.85rem;
-    font-size: 0.78rem;
+  .lambo-hex-btn {
+    width: 44px;
+    height: 50px;
   }
 
-  .tab-count {
-    font-size: 0.68rem;
-    padding: 0.1rem 0.4rem;
+  .lambo-brand-title {
+    font-size: 1.3rem;
+    letter-spacing: 0.18em;
   }
 
-  .projects-showcase-grid {
-    gap: 1.4rem;
+  .lambo-racing-stripe {
+    width: 100px;
   }
 
-  .project-showcase-card {
-    padding: 1rem;
-    border-radius: 18px;
+  .lambo-hero-slogan {
+    font-size: 1.5rem;
+    line-height: 1.15;
   }
 
-  .project-viewport-window {
-    height: 180px;
-    margin-bottom: 0.9rem;
-    border-radius: 12px;
+  .lambo-stage-viewport {
+    height: 250px;
+    margin: 0.5rem 0 1rem;
   }
 
-  .viewport-header-bar {
-    height: 28px;
-    padding: 0 0.6rem;
+  .lambo-stage-vehicle.vehicle-active {
+    height: 220px;
+    width: 92vw;
   }
 
-  .viewport-traffic-dots {
-    gap: 4px;
+  .lambo-vehicle-img {
+    max-height: 200px;
   }
 
-  .v-dot {
-    width: 7px;
-    height: 7px;
+  .lambo-stage-vehicle.vehicle-prev,
+  .lambo-stage-vehicle.vehicle-next {
+    display: none; /* Focus solely on center vehicle on small screens */
   }
 
-  .viewport-status-badge {
-    font-size: 0.65rem;
+  .lambo-desc-text {
+    font-size: 0.92rem;
+    line-height: 1.6;
   }
 
-  .viewport-address-slug {
-    display: none;
+  .lambo-action-cta-row {
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
-  .project-headline-row {
-    gap: 0.5rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .project-number-tag {
-    font-size: 0.95rem;
-  }
-
-  .project-title-text {
-    font-size: 1.1rem;
-  }
-
-  .project-summary-text {
-    font-size: 0.85rem;
-    line-height: 1.55;
-    margin-bottom: 0.9rem;
-  }
-
-  .project-tech-badges {
-    gap: 0.35rem;
-    margin-bottom: 1rem;
-  }
-
-  .tech-badge-item {
-    padding: 0.25rem 0.65rem;
-    font-size: 0.72rem;
-  }
-
-  .project-action-buttons {
-    gap: 0.5rem;
-  }
-
-  .p-btn {
+  .lambo-btn-primary,
+  .lambo-btn-secondary {
     width: 100%;
     justify-content: center;
-    padding: 0.6rem 1rem;
-    font-size: 0.82rem;
+    padding: 0.85rem 1.4rem;
+  }
+
+  .lambo-specs-text {
+    font-size: 0.7rem;
   }
 }

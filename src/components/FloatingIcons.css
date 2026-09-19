@@ -9,82 +9,59 @@
 }
 
 /* ==========================================================================
-   Yellow & Orange Ambient Glow Mesh Orbs (Cosmic Flame Glow)
+   Subtle Ambient Atmosphere Glows
    ========================================================================== */
 .ambient-glow-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(85px);
-  opacity: 0.6;
+  filter: blur(120px);
   pointer-events: none;
-  animation: pulseOrb 10s ease-in-out infinite alternate;
+  animation: pulseOrb 16s ease-in-out infinite alternate;
 }
 
-[data-theme="light"] .ambient-glow-orb {
-  opacity: 0.45;
-  filter: blur(100px);
-}
-
-.orb-sky-top-left {
-  top: -12%;
-  left: -8%;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(250, 204, 21, 0.55) 0%, rgba(245, 158, 11, 0.3) 55%, transparent 75%);
-}
-
-.orb-purple-top-right {
-  top: 10%;
-  right: -10%;
+.glow-top-sky {
+  top: -15%;
+  left: 20%;
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.55) 0%, rgba(234, 88, 12, 0.3) 55%, transparent 75%);
-  animation-delay: -3s;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(14, 165, 233, 0.05) 50%, transparent 75%);
+  opacity: 0.8;
 }
 
-.orb-purple-center {
-  top: 45%;
-  left: 25%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.45) 0%, rgba(249, 115, 22, 0.32) 55%, transparent 75%);
-  animation-delay: -5s;
+[data-theme="light"] .glow-top-sky {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, transparent 70%);
+  opacity: 0.6;
 }
 
-.orb-sky-bottom-left {
-  bottom: 0%;
-  left: -12%;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(251, 191, 36, 0.55) 0%, rgba(245, 158, 11, 0.3) 55%, transparent 75%);
-  animation-delay: -4s;
+.glow-bottom-indigo {
+  bottom: -15%;
+  right: 15%;
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.10) 0%, rgba(79, 70, 229, 0.04) 50%, transparent 75%);
+  opacity: 0.8;
+  animation-delay: -6s;
 }
 
-.orb-purple-bottom-right {
-  bottom: -12%;
-  right: -8%;
-  width: 680px;
-  height: 680px;
-  background: radial-gradient(circle, rgba(234, 88, 12, 0.55) 0%, rgba(249, 115, 22, 0.3) 55%, transparent 75%);
-  animation-delay: -7s;
+[data-theme="light"] .glow-bottom-indigo {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+  opacity: 0.6;
 }
 
 @keyframes pulseOrb {
   0% {
-    transform: scale(0.92) translate(0, 0);
+    transform: scale(0.95) translate(0, 0);
   }
-
   50% {
-    transform: scale(1.12) translate(25px, -25px);
+    transform: scale(1.1) translate(25px, -20px);
   }
-
   100% {
-    transform: scale(0.96) translate(-20px, 20px);
+    transform: scale(0.98) translate(-20px, 15px);
   }
 }
 
 /* ==========================================================================
-   Floating Tech Logos Moving Bottom to Top Slowly with Low Opacity
+   Floating Tech Logos Moving Bottom to Top Slowly
    ========================================================================== */
 .floating-logos-track {
   position: absolute;
@@ -97,20 +74,23 @@
 .floating-tech-logo {
   position: absolute;
   bottom: -60px;
-  opacity: 0.22;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: riseSlowly linear infinite;
-  filter: drop-shadow(0 0 12px currentColor);
+  color: var(--text-muted);
+  opacity: 0.10;
+  transition: opacity 0.3s ease;
 }
 
 [data-theme="light"] .floating-tech-logo {
-  opacity: 0.28;
+  opacity: 0.16;
+  color: #64748b;
 }
 
 [data-theme="dark"] .floating-tech-logo {
-  opacity: 0.2;
+  opacity: 0.08;
+  color: #94a3b8;
 }
 
 @keyframes riseSlowly {
@@ -118,19 +98,15 @@
     transform: translateY(0) translateX(0) rotate(0deg);
     opacity: 0;
   }
-
-  8% {
-    opacity: 0.22;
+  10% {
+    opacity: 0.08;
   }
-
   50% {
-    transform: translateY(-55vh) translateX(25px) rotate(180deg);
+    transform: translateY(-55vh) translateX(20px) rotate(180deg);
   }
-
-  92% {
-    opacity: 0.22;
+  90% {
+    opacity: 0.08;
   }
-
   100% {
     transform: translateY(-115vh) translateX(-20px) rotate(360deg);
     opacity: 0;
@@ -142,6 +118,6 @@
   .floating-tech-logo,
   .ambient-glow-orb {
     animation: none;
-    opacity: 0.15;
+    opacity: 0.05;
   }
 }

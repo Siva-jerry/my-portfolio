@@ -1,79 +1,63 @@
-.navbar-wrapper {
+/* ==========================================================================
+   Navigation 8: React Bits Pro Inspired Dual Navigation System
+   - Top Minimalist Brand Header Bar
+   - Floating Bottom Dock with Blurred Background & Image Previews
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Top Minimalist Brand Header Bar
+   -------------------------------------------------------------------------- */
+.top-header-wrapper {
   position: fixed;
-  top: 18px;
+  top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
+  z-index: 900;
+  padding: 1.2rem 2.5rem;
   pointer-events: none;
-  padding: 0 1.5rem;
   transition: all 0.35s ease;
 }
 
-/* Glass Card Navbar Pill */
-.navbar-pill {
-  pointer-events: auto;
-  width: 100%;
-  max-width: 1140px;
-  height: 66px;
+.top-header-wrapper.top-scrolled {
+  padding: 0.8rem 2.5rem;
+  background: rgba(10, 15, 30, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .top-header-wrapper.top-scrolled {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.top-header-container {
+  max-width: 1320px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.6rem 0 2rem;
-  border-radius: var(--radius-full);
-  
-  /* Ultra-pure Glassmorphism */
-  background: rgba(14, 14, 16, 0.75);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1.5px solid rgba(250, 204, 21, 0.28);
-  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.6), 
-              0 0 24px -4px rgba(249, 115, 22, 0.2),
-              inset 0 1px 1px rgba(255, 255, 255, 0.15);
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-[data-theme="light"] .navbar-pill {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1.5px solid rgba(245, 158, 11, 0.35);
-  box-shadow: 0 12px 36px -8px rgba(249, 115, 22, 0.15), 
-              0 4px 20px rgba(0, 0, 0, 0.03),
-              inset 0 1px 1px rgba(255, 255, 255, 0.95);
-}
-
-.navbar-scrolled .navbar-pill {
-  height: 60px;
-  background: rgba(10, 10, 12, 0.9);
-  box-shadow: 0 16px 40px -10px rgba(249, 115, 22, 0.35), 
-              0 6px 18px rgba(0, 0, 0, 0.5),
-              inset 0 1px 1px rgba(255, 255, 255, 0.2);
-}
-
-[data-theme="light"] .navbar-scrolled .navbar-pill {
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 16px 40px -10px rgba(249, 115, 22, 0.2), 
-              0 6px 18px rgba(0, 0, 0, 0.04),
-              inset 0 1px 1px rgba(255, 255, 255, 1);
-}
-
-/* Logo */
-.navbar-logo {
+/* Brand Logo */
+.top-brand-logo {
+  pointer-events: auto;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 0.85rem;
   text-decoration: none;
-  gap: 2px;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
-.navbar-logo:hover {
-  transform: scale(1.05);
+.top-brand-logo:hover {
+  transform: translateY(-1px);
 }
 
-.logo-script {
+.brand-name {
   font-family: var(--font-script);
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 700;
   background: var(--brand-gradient);
   -webkit-background-clip: text;
@@ -82,310 +66,476 @@
   line-height: 1;
 }
 
-.logo-dot {
-  font-size: 2.2rem;
-  color: var(--amber-yellow);
+.brand-dot {
+  font-size: 2rem;
+  color: var(--cyan-neon);
   font-weight: 900;
   line-height: 1;
+  filter: drop-shadow(0 0 8px var(--cyan-neon));
+  margin-left: -0.65rem;
 }
 
-/* Nav Links */
-.navbar-links {
+/* Online Status Chip */
+.brand-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  margin-left: 0.4rem;
+}
+
+.status-indicator-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: statusPulse 2s infinite ease-in-out;
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.55;
+  }
+}
+
+.status-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #10b981;
+  letter-spacing: 0.02em;
+}
+
+/* Top Header Actions */
+.top-header-actions {
+  pointer-events: auto;
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 0.75rem;
 }
 
-.nav-link {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  position: relative;
-  padding: 0.4rem 0.2rem;
-  transition: color 0.25s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--text-primary);
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2.5px;
-  border-radius: 4px;
-  background: var(--primary-gradient);
-  transform: translateX(-50%);
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 85%;
-}
-
-/* Actions */
-.navbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-}
-
-/* Theme Toggle Button */
-.theme-toggle-btn {
-  width: 40px;
-  height: 40px;
+.top-social-btn {
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--card-bg-subtle);
   border: 1px solid var(--glass-border);
-  color: var(--text-primary);
-  font-size: 1.15rem;
-  transition: all 0.3s ease;
-}
-
-[data-theme="light"] .theme-toggle-btn {
-  background: rgba(245, 158, 11, 0.08);
-}
-
-.theme-toggle-btn:hover {
-  background: var(--card-bg-hover);
-  transform: rotate(20deg) scale(1.08);
-  border-color: var(--glass-border-hover);
-  color: var(--amber-yellow);
-  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.25);
-}
-
-.theme-icon.sun {
-  color: #f59e0b;
-}
-
-.theme-icon.moon {
-  color: #fb923c;
-}
-
-/* CTA Button */
-.navbar-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1.45rem;
-  border-radius: var(--radius-full);
-  background: var(--primary-gradient);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.92rem;
-  box-shadow: 0 6px 20px -4px rgba(249, 115, 22, 0.45);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  transition: all 0.25s ease;
   text-decoration: none;
 }
 
-.navbar-cta-btn:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 10px 25px -4px rgba(234, 88, 12, 0.5);
-}
-
-.cta-arrow {
-  transition: transform 0.25s ease;
-}
-
-.navbar-cta-btn:hover .cta-arrow {
-  transform: translateX(4px);
-}
-
-/* Mobile Menu Button */
-.mobile-menu-btn {
-  display: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
+.top-social-btn:hover {
   color: var(--text-primary);
-  font-size: 1.3rem;
-  transition: all 0.25s ease;
-}
-
-.mobile-menu-btn:hover {
   background: var(--card-bg-hover);
-  color: var(--amber-yellow);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.3);
 }
 
-/* Mobile Drawer */
-.mobile-drawer {
-  position: fixed;
-  top: 90px;
-  left: 1rem;
-  right: 1rem;
-  pointer-events: auto;
-  border-radius: var(--radius-xl);
-  background: rgba(14, 14, 16, 0.92);
-  backdrop-filter: blur(32px) saturate(180%);
-  -webkit-backdrop-filter: blur(32px) saturate(180%);
-  border: 1.5px solid rgba(250, 204, 21, 0.28);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.7);
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-[data-theme="light"] .mobile-drawer {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1.5px solid rgba(245, 158, 11, 0.4);
-  box-shadow: 0 20px 48px rgba(249, 115, 22, 0.18);
-}
-
-.drawer-open {
-  max-height: 520px;
-  opacity: 1;
-  visibility: visible;
-}
-
-.mobile-drawer-content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.mobile-nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.mobile-nav-link {
-  display: block;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  padding: 0.5rem 0.8rem;
-  border-radius: var(--radius-sm);
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.mobile-nav-link:hover {
-  background: var(--tag-bg);
-  color: var(--amber-yellow);
-}
-
-.mobile-drawer-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--glass-border);
-}
-
-.mobile-theme-btn {
+.top-theme-toggle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding: 0.75rem;
-  border-radius: var(--radius-md);
   background: var(--card-bg-subtle);
   border: 1px solid var(--glass-border);
   color: var(--text-primary);
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.mobile-cta-btn {
-  display: flex;
+.top-theme-toggle-btn:hover {
+  background: var(--card-bg-hover);
+  transform: rotate(20deg) scale(1.08);
+  border-color: var(--cyan-neon);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+}
+
+.top-cta-btn {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  padding: 0.85rem;
+  padding: 0.55rem 1.35rem;
   border-radius: var(--radius-full);
   background: var(--primary-gradient);
   color: #ffffff;
+  font-weight: 800;
+  font-size: 0.88rem;
+  box-shadow: var(--button-glow);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+  margin-left: 0.2rem;
+}
+
+.top-cta-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--button-glow-hover);
+  color: #ffffff;
+}
+
+.top-cta-arrow {
+  transition: transform 0.25s ease;
+}
+
+.top-cta-btn:hover .top-cta-arrow {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   2. React Bits Pro Navigation 8: Floating Bottom Dock
+   -------------------------------------------------------------------------- */
+.nav8-bottom-wrapper {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  pointer-events: none;
+  max-width: 95vw;
+}
+
+.nav8-dock-container {
+  pointer-events: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Blurred Frosted Dock Pill */
+.nav8-items-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: var(--nav-bg);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1.5px solid var(--nav-border);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.15);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+[data-theme="light"] .nav8-items-strip {
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.12), 0 0 20px rgba(2, 132, 199, 0.1);
+}
+
+/* Navigation Item */
+.nav8-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 0.95rem;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
   font-weight: 700;
   text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
 }
 
-.mobile-drawer-socials {
+.nav8-icon-wrap {
+  font-size: 1.15rem;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 1.25rem;
-  font-size: 1.3rem;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.nav8-label {
+  letter-spacing: 0.02em;
+}
+
+.nav8-item:hover {
+  color: var(--text-primary);
+  background: var(--card-bg-hover);
+  transform: translateY(-2px);
+}
+
+.nav8-item:hover .nav8-icon-wrap {
+  transform: scale(1.18);
+  color: var(--primary);
+}
+
+/* Active State */
+.nav8-item.is-active {
+  color: var(--primary);
+  background: var(--tag-bg);
+}
+
+.nav8-item.is-active .nav8-icon-wrap {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+/* Active Glowing Dot */
+.nav8-active-dot {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+
+/* Dock Divider */
+.nav8-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--glass-border);
+  margin: 0 0.3rem;
+}
+
+/* Dock Theme Toggle */
+.nav8-theme-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
   color: var(--text-secondary);
-  padding-top: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.mobile-drawer-socials a:hover {
-  color: var(--amber-yellow);
+.nav8-theme-toggle:hover {
+  color: var(--text-primary);
+  background: var(--card-bg-hover);
+  transform: rotate(20deg) scale(1.1);
 }
 
-/* Responsive */
-@media (max-width: 1040px) {
-  .navbar-links {
-    gap: 1.1rem;
+.dock-theme-icon.sun {
+  color: #fbbf24;
+  filter: drop-shadow(0 0 6px #fbbf24);
+}
+
+.dock-theme-icon.moon {
+  color: #38bdf8;
+  filter: drop-shadow(0 0 6px #38bdf8);
+}
+
+/* --------------------------------------------------------------------------
+   3. Image Preview Popup Tooltip (React Bits Pro Spec)
+   -------------------------------------------------------------------------- */
+.nav8-preview-popup {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 1010;
+  animation: nav8PreviewPop 0.26s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes nav8PreviewPop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
   }
 }
 
+.nav8-preview-card {
+  position: relative;
+  width: 250px;
+  background: var(--card-bg);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1.5px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: visible;
+  padding: 8px;
+  box-shadow: 0 24px 48px -8px rgba(0, 0, 0, 0.65), 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+[data-theme="light"] .nav8-preview-card {
+  box-shadow: 0 24px 48px -8px rgba(0, 0, 0, 0.16), 0 0 20px rgba(2, 132, 199, 0.12);
+}
+
+/* Preview Image & Badge */
+.nav8-preview-media {
+  position: relative;
+  width: 100%;
+  height: 126px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #0b0f19;
+}
+
+.nav8-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.nav8-preview-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.7) 100%);
+  pointer-events: none;
+}
+
+.nav8-preview-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: var(--cyan-neon);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+/* Preview Text Info */
+.nav8-preview-info {
+  padding: 8px 6px 4px;
+}
+
+.nav8-preview-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 2px;
+}
+
+.nav8-preview-arrow {
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+.nav8-preview-subtitle {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+/* Downward Notch */
+.nav8-preview-notch {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: var(--card-bg);
+  border-right: 1.5px solid var(--glass-border);
+  border-bottom: 1.5px solid var(--glass-border);
+}
+
+/* --------------------------------------------------------------------------
+   4. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
 @media (max-width: 900px) {
-  .navbar-links {
+  .top-header-wrapper {
+    padding: 1rem 1.5rem;
+  }
+
+  .brand-status-chip {
     display: none;
   }
 
-  .mobile-menu-btn {
-    display: flex;
+  .nav8-item {
+    padding: 0.55rem 0.8rem;
+    font-size: 0.82rem;
   }
 
-  .navbar-pill {
-    height: 60px;
-    padding: 0 1.2rem 0 1.5rem;
+  .nav8-preview-card {
+    width: 220px;
   }
 
-  .logo-script {
-    font-size: 2.1rem;
-  }
-
-  .navbar-cta-btn {
-    display: none;
+  .nav8-preview-media {
+    height: 110px;
   }
 }
 
-@media (max-width: 600px) {
-  .navbar-wrapper {
-    top: 10px;
-    padding: 0 0.85rem;
+@media (max-width: 680px) {
+  .top-header-wrapper {
+    padding: 0.8rem 1rem;
   }
 
-  .navbar-pill {
-    height: 56px;
-    padding: 0 0.9rem 0 1.1rem;
+  .top-cta-btn {
+    padding: 0.45rem 1rem;
+    font-size: 0.82rem;
   }
 
-  .logo-script {
-    font-size: 1.95rem;
+  .top-social-btn {
+    display: none;
   }
 
-  .theme-toggle-btn,
-  .mobile-menu-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 1.15rem;
+  .nav8-bottom-wrapper {
+    bottom: 14px;
+    max-width: 96vw;
   }
 
-  .mobile-drawer {
-    top: 72px;
-    left: 0.85rem;
-    right: 0.85rem;
+  .nav8-items-strip {
+    padding: 0.35rem 0.5rem;
+    gap: 0.2rem;
+  }
+
+  .nav8-item {
+    padding: 0.5rem 0.6rem;
+    gap: 0;
+  }
+
+  /* Hide labels on small mobile screens to keep dock compact */
+  .nav8-label {
+    display: none;
+  }
+
+  .nav8-icon-wrap {
+    font-size: 1.25rem;
+  }
+
+  .nav8-preview-card {
+    width: 200px;
+  }
+
+  .nav8-preview-media {
+    height: 100px;
+  }
+
+  .nav8-preview-subtitle {
+    font-size: 0.72rem;
   }
 }

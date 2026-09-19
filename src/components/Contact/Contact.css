@@ -128,19 +128,15 @@
 }
 
 .channel-icon-box.email {
-  background: rgba(245, 158, 11, 0.12);
-  color: var(--amber-yellow);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
-[data-theme="light"] .channel-icon-box.email {
-  color: var(--accent-orange-deep);
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.4);
 }
 
 .channel-icon-box.location {
-  background: rgba(16, 185, 129, 0.12);
+  background: rgba(16, 185, 129, 0.15);
   color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(16, 185, 129, 0.4);
 }
 
 .channel-content {
@@ -170,11 +166,7 @@
 }
 
 .channel-value:hover {
-  color: var(--amber-yellow);
-}
-
-[data-theme="light"] .channel-value:hover {
-  color: var(--accent-orange-deep);
+  color: var(--cyan-neon);
 }
 
 .channel-link-arrow {
@@ -186,12 +178,8 @@
 }
 
 .channel-item:hover .channel-link-arrow {
-  color: var(--amber-yellow);
+  color: var(--cyan-neon);
   transform: translate(2px, -2px);
-}
-
-[data-theme="light"] .channel-item:hover .channel-link-arrow {
-  color: var(--accent-orange-deep);
 }
 
 .channel-copy-btn {
@@ -219,7 +207,7 @@
   color: #ffffff;
   border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+  box-shadow: var(--button-glow);
 }
 
 .channel-copy-btn.copied {
@@ -265,15 +253,28 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.social-contact-pill:hover {
+.social-contact-pill.linkedin:hover {
+  background: rgba(10, 102, 194, 0.18);
+  border-color: #0a66c2;
+  color: #38bdf8;
   transform: translateY(-3px);
-  border-color: var(--glass-border-hover);
-  color: var(--amber-yellow);
-  box-shadow: 0 6px 16px rgba(249, 115, 22, 0.25);
+  box-shadow: 0 0 16px rgba(10, 102, 194, 0.35);
 }
 
-[data-theme="light"] .social-contact-pill:hover {
-  color: var(--accent-orange-deep);
+.social-contact-pill.github:hover {
+  background: rgba(168, 85, 247, 0.18);
+  border-color: #a855f7;
+  color: #c084fc;
+  transform: translateY(-3px);
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.35);
+}
+
+.social-contact-pill.instagram:hover {
+  background: rgba(225, 48, 108, 0.18);
+  border-color: #e1306c;
+  color: #f472b6;
+  transform: translateY(-3px);
+  box-shadow: 0 0 16px rgba(225, 48, 108, 0.35);
 }
 
 .social-contact-pill:active {
@@ -294,13 +295,9 @@
 }
 
 .clock-ico {
-  color: var(--amber-yellow);
+  color: #fbbf24;
   flex-shrink: 0;
   font-size: 0.95rem;
-}
-
-[data-theme="light"] .clock-ico {
-  color: var(--accent-orange-deep);
 }
 
 /* --------------------------------------------------------------------------
@@ -385,29 +382,18 @@
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-  border-color: var(--amber-yellow);
+  border-color: var(--cyan-neon);
   background: var(--card-bg);
-  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2);
-}
-
-[data-theme="light"] .form-input:focus,
-[data-theme="light"] .form-select:focus,
-[data-theme="light"] .form-textarea:focus {
-  border-color: var(--accent-orange-deep);
-  box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.18);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.25), 0 0 16px rgba(139, 92, 246, 0.2);
 }
 
 .form-select {
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23facc15' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2322d3ee' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1.1rem center;
   background-size: 16px;
   padding-right: 2.75rem;
-}
-
-[data-theme="light"] .form-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ea580c' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
 }
 
 .form-select option {
@@ -435,7 +421,7 @@
   font-weight: 800;
   border: none;
   cursor: pointer;
-  box-shadow: 0 8px 24px -4px rgba(249, 115, 22, 0.45);
+  box-shadow: var(--button-glow);
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   margin-top: 0.35rem;
   min-height: 48px;
@@ -445,7 +431,7 @@
 
 .form-submit-btn:hover {
   transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 12px 28px -4px rgba(234, 88, 12, 0.5);
+  box-shadow: var(--button-glow-hover);
 }
 
 .form-submit-btn:active {

@@ -12,12 +12,18 @@
   padding: 2rem 2.8rem;
   border-radius: var(--radius-xl);
   margin-bottom: 2rem;
-  background: linear-gradient(135deg, rgba(250, 204, 21, 0.14) 0%, rgba(249, 115, 22, 0.18) 100%);
-  border: 1.5px solid var(--glass-border);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.22) 0%, rgba(6, 182, 212, 0.22) 50%, rgba(236, 72, 153, 0.18) 100%);
+  border: 1.5px solid rgba(139, 92, 246, 0.35);
+  box-shadow: 0 16px 40px -10px rgba(139, 92, 246, 0.3);
   gap: 2rem;
   position: relative;
   overflow: hidden;
+}
+
+[data-theme="light"] .footer-cta-strip {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.14) 50%, rgba(236, 72, 153, 0.1) 100%);
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.15);
 }
 
 /* Cyber Orbit Animation Styles */
@@ -28,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 0 16px rgba(249, 115, 22, 0.5));
+  filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.6));
 }
 
 .cyber-orbit-animation {
@@ -96,14 +102,10 @@
   gap: 0.55rem;
   font-size: 0.8rem;
   font-weight: 800;
-  color: var(--sky-blue);
+  color: var(--cyan-neon);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.45rem;
-}
-
-[data-theme="light"] .cta-live-badge {
-  color: var(--sky-blue-deep);
 }
 
 .live-pulse-dot {
@@ -137,14 +139,14 @@
   font-size: 1rem;
   font-weight: 800;
   text-decoration: none;
-  box-shadow: 0 8px 24px -4px rgba(249, 115, 22, 0.45);
+  box-shadow: var(--button-glow);
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   white-space: nowrap;
 }
 
 .footer-cta-btn:hover {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 12px 28px -4px rgba(234, 88, 12, 0.5);
+  box-shadow: var(--button-glow-hover);
 }
 
 .cta-arrow-ico {
@@ -197,8 +199,9 @@
 
 .logo-dot-accent {
   font-size: 2.2rem;
-  color: var(--amber-yellow);
+  color: var(--cyan-neon);
   line-height: 1;
+  filter: drop-shadow(0 0 8px var(--cyan-neon));
 }
 
 .footer-brand-bio {
@@ -220,11 +223,7 @@
 }
 
 .loc-pin-ico {
-  color: var(--amber-yellow);
-}
-
-[data-theme="light"] .loc-pin-ico {
-  color: var(--accent-orange-deep);
+  color: #10b981;
 }
 
 /* Squircle Social Buttons */
@@ -253,7 +252,7 @@
   color: #ffffff;
   border-color: transparent;
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px -4px rgba(249, 115, 22, 0.45);
+  box-shadow: var(--button-glow);
 }
 
 /* Column 2: Navigation Links */
@@ -286,7 +285,7 @@
 }
 
 .link-hover-dash {
-  color: var(--sky-blue);
+  color: var(--cyan-neon);
   opacity: 0;
   transform: translateX(-4px);
   transition: all 0.25s ease;
@@ -294,12 +293,8 @@
 }
 
 .footer-link-anchor:hover {
-  color: var(--sky-blue);
+  color: var(--cyan-neon);
   transform: translateX(4px);
-}
-
-[data-theme="light"] .footer-link-anchor:hover {
-  color: var(--sky-blue-deep);
 }
 
 .footer-link-anchor:hover .link-hover-dash {
@@ -358,10 +353,10 @@
 }
 
 .footer-scroll-top-btn:hover {
-  border-color: var(--glass-border-hover);
+  border-color: var(--cyan-neon);
   transform: translateY(-3px);
-  color: var(--sky-blue);
-  box-shadow: var(--glass-shadow);
+  color: var(--cyan-neon);
+  box-shadow: 0 0 18px rgba(6, 182, 212, 0.25);
 }
 
 .footer-scroll-top-btn:hover .top-arrow-circle {

@@ -24,7 +24,6 @@ const allCertificates = [
     issuer: "Outskill",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#f59e0b",
     tag: "LLMs & GenAI",
   },
   {
@@ -32,7 +31,6 @@ const allCertificates = [
     issuer: "IBM SkillsBuild",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#facc15",
     tag: "Core AI",
   },
   {
@@ -40,7 +38,6 @@ const allCertificates = [
     issuer: "NoviTech R&D Pvt. Ltd.",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#f97316",
     tag: "AI Architecture",
   },
   {
@@ -48,7 +45,6 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#fb923c",
     tag: "Vision Systems",
   },
   {
@@ -56,7 +52,6 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#ea580c",
     tag: "Foundational AI",
   },
   {
@@ -64,7 +59,6 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#fbbf24",
     tag: "Neural Networks",
   },
   {
@@ -72,7 +66,6 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "ai",
     categoryLabel: "Artificial Intelligence",
-    color: "#f59e0b",
     tag: "NLP & Text",
   },
 
@@ -82,7 +75,6 @@ const allCertificates = [
     issuer: "NoviTech R&D Pvt. Ltd.",
     category: "dev",
     categoryLabel: "Web & Software",
-    color: "#f97316",
     tag: "MERN Stack",
   },
   {
@@ -90,7 +82,6 @@ const allCertificates = [
     issuer: "NoviTech R&D Pvt. Ltd.",
     category: "dev",
     categoryLabel: "Web & Software",
-    color: "#fbbf24",
     tag: "Design Systems",
   },
   {
@@ -98,7 +89,6 @@ const allCertificates = [
     issuer: "Campus Connection",
     category: "dev",
     categoryLabel: "Web & Software",
-    color: "#f59e0b",
     tag: "Frontend Dev",
   },
   {
@@ -106,7 +96,6 @@ const allCertificates = [
     issuer: "CADD Expert Training Institution",
     category: "dev",
     categoryLabel: "Web & Software",
-    color: "#ea580c",
     tag: "Mobile Apps",
   },
   {
@@ -114,7 +103,6 @@ const allCertificates = [
     issuer: "Vinsup Academy / Vinsup Infotech",
     category: "dev",
     categoryLabel: "Web & Software",
-    color: "#fb923c",
     tag: "Native Android",
   },
 
@@ -124,7 +112,6 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "data",
     categoryLabel: "Data & DevOps",
-    color: "#facc15",
     tag: "Data Analytics",
   },
   {
@@ -132,7 +119,6 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "data",
     categoryLabel: "Data & DevOps",
-    color: "#f97316",
     tag: "RPA Automation",
   },
   {
@@ -140,7 +126,6 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "data",
     categoryLabel: "Data & DevOps",
-    color: "#ea580c",
     tag: "CI/CD Pipelines",
   },
   {
@@ -148,7 +133,6 @@ const allCertificates = [
     issuer: "Infosys Springboard",
     category: "data",
     categoryLabel: "Data & DevOps",
-    color: "#f59e0b",
     tag: "Agile & Scrum",
   },
   {
@@ -156,7 +140,6 @@ const allCertificates = [
     issuer: "IBM SkillsBuild",
     category: "data",
     categoryLabel: "Data & DevOps",
-    color: "#fbbf24",
     tag: "Critical Analysis",
   },
   {
@@ -164,7 +147,6 @@ const allCertificates = [
     issuer: "IBM SkillsBuild",
     category: "data",
     categoryLabel: "Data & DevOps",
-    color: "#fb923c",
     tag: "Professionalism",
   },
 
@@ -174,7 +156,6 @@ const allCertificates = [
     issuer: "Young Creators Program",
     category: "industry",
     categoryLabel: "Industry Program",
-    color: "#f59e0b",
     tag: "Low-Code Apps",
   },
   {
@@ -182,7 +163,6 @@ const allCertificates = [
     issuer: "Edunet Foundation",
     category: "industry",
     categoryLabel: "Industry Program",
-    color: "#f97316",
     tag: "Sustainable Tech",
   },
   {
@@ -190,7 +170,6 @@ const allCertificates = [
     issuer: "Shell & AICTE",
     category: "industry",
     categoryLabel: "Industry Program",
-    color: "#fbbf24",
     tag: "Energy & Tech",
   },
   {
@@ -198,7 +177,6 @@ const allCertificates = [
     issuer: "Industry Partners",
     category: "industry",
     categoryLabel: "Industry Program",
-    color: "#ea580c",
     tag: "Industry Ready",
   },
   {
@@ -206,7 +184,6 @@ const allCertificates = [
     issuer: "Institutional Training",
     category: "industry",
     categoryLabel: "Industry Program",
-    color: "#facc15",
     tag: "Hands-on Building",
   },
 ];
@@ -272,41 +249,64 @@ function Certifications() {
 
         {/* Unique Certificate Badge Passport Grid */}
         <div className="cert-passport-grid">
-          {filteredCerts.map((cert, index) => (
-            <div
-              className="cert-passport-card glass-panel"
-              key={index}
-              style={{ "--cert-glow": cert.color }}
-            >
-              <div className="cert-card-accent-bar" style={{ background: cert.color }}></div>
+          {filteredCerts.map((cert, index) => {
+            const trackColor =
+              cert.category === "ai"
+                ? "#a855f7"
+                : cert.category === "dev"
+                ? "#06b6d4"
+                : cert.category === "data"
+                ? "#10b981"
+                : "#f59e0b";
 
-              {/* Card Top: Issuer & Verified Seal */}
-              <div className="cert-card-topbar">
-                <div className="cert-issuer-badge">
-                  <FaBuilding className="issuer-icon" />
-                  <span>{cert.issuer}</span>
+            return (
+              <div
+                className="cert-passport-card glass-panel"
+                key={index}
+                style={{ "--accent-track": trackColor }}
+              >
+                <div
+                  className="cert-card-accent-bar"
+                  style={{
+                    background: `linear-gradient(90deg, ${trackColor}, transparent)`,
+                  }}
+                ></div>
+
+                {/* Card Top: Issuer & Verified Seal */}
+                <div className="cert-card-topbar">
+                  <div className="cert-issuer-badge">
+                    <FaBuilding className="issuer-icon" style={{ color: trackColor }} />
+                    <span>{cert.issuer}</span>
+                  </div>
+
+                  <div className="cert-verified-seal">
+                    <FaShieldAlt className="shield-ico" />
+                    <span>Verified</span>
+                  </div>
                 </div>
 
-                <div className="cert-verified-seal">
-                  <FaShieldAlt className="shield-ico" />
-                  <span>Verified</span>
+                {/* Card Middle: Certificate Title */}
+                <div className="cert-body">
+                  <h3 className="cert-title-heading">{cert.title}</h3>
+                </div>
+
+                {/* Card Bottom: Domain Tag & Category Pill */}
+                <div className="cert-card-footer">
+                  <span className="cert-category-tag">{cert.categoryLabel}</span>
+                  <span
+                    className="cert-skill-pill"
+                    style={{
+                      color: trackColor,
+                      borderColor: `${trackColor}50`,
+                      background: `${trackColor}15`,
+                    }}
+                  >
+                    {cert.tag}
+                  </span>
                 </div>
               </div>
-
-              {/* Card Middle: Certificate Title */}
-              <div className="cert-body">
-                <h3 className="cert-title-heading">{cert.title}</h3>
-              </div>
-
-              {/* Card Bottom: Domain Tag & Category Pill */}
-              <div className="cert-card-footer">
-                <span className="cert-category-tag">{cert.categoryLabel}</span>
-                <span className="cert-skill-pill" style={{ color: cert.color, borderColor: `${cert.color}40` }}>
-                  {cert.tag}
-                </span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
