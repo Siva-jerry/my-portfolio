@@ -174,7 +174,7 @@ function Footer() {
                 </a>
 
                 <a
-                  href="mailto:sivajerry1433@gmail.com"
+                  href="mailto:siva00jerry@gmail.com"
                   aria-label="Email"
                   className="squircle-social-btn"
                 >

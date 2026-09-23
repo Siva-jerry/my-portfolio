@@ -24,7 +24,7 @@ const socialLinks = [
   {
     name: "Email",
     icon: <FaEnvelope />,
-    url: "mailto:sivajerry1433@gmail.com",
+    url: "mailto:siva00jerry@gmail.com",
     color: "#ea4335",
   },
 ];

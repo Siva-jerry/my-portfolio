@@ -26,7 +26,7 @@ function Contact() {
   const handleCopyEmail = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    navigator.clipboard.writeText("sivajerry1433@gmail.com");
+    navigator.clipboard.writeText("siva00jerry@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -37,7 +37,7 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const mailtoUrl = `mailto:sivajerry1433@gmail.com?subject=${encodeURIComponent(
+    const mailtoUrl = `mailto:siva00jerry@gmail.com?subject=${encodeURIComponent(
       `[Portfolio Inquiry - ${formData.subject}] from ${formData.name}`
     )}&body=${encodeURIComponent(
       `Hi Siva,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -90,11 +90,11 @@ function Contact() {
                 <div className="channel-content">
                   <span className="channel-label">Email Address</span>
                   <a
-                    href="mailto:sivajerry1433@gmail.com"
+                    href="mailto:siva00jerry@gmail.com"
                     className="channel-value email-link"
-                    title="Send email to sivajerry1433@gmail.com"
+                    title="Send email to siva00jerry@gmail.com"
                   >
-                    sivajerry1433@gmail.com
+                    siva00jerry@gmail.com
                   </a>
                 </div>
                 <button
