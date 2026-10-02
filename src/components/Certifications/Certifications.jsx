@@ -10,7 +10,6 @@ import {
 } from "react-icons/fa";
 
 const certCategories = [
-  { id: "all", label: "All Credentials", count: 23 },
   { id: "ai", label: "Artificial Intelligence", count: 7, icon: <FaRobot /> },
   { id: "dev", label: "Web & Software", count: 5, icon: <FaLaptopCode /> },
   { id: "data", label: "Data & DevOps", count: 6, icon: <FaChartLine /> },
@@ -189,12 +188,9 @@ const allCertificates = [
 ];
 
 function Certifications() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("ai");
 
-  const filteredCerts =
-    activeCategory === "all"
-      ? allCertificates
-      : allCertificates.filter((c) => c.category === activeCategory);
+  const filteredCerts = allCertificates.filter((c) => c.category === activeCategory);
 
   return (
     <section className="certifications-section" id="certifications">

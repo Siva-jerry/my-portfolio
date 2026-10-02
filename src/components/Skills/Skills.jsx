@@ -23,7 +23,6 @@ import { MdDevices, MdApi } from "react-icons/md";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const skillCategories = [
-  { id: "all", label: "All Skills", count: 22 },
   { id: "frontend", label: "Frontend & UI/UX", count: 6 },
   { id: "backend", label: "Backend & Mobile", count: 5 },
   { id: "tools", label: "AI & Tools", count: 5 },
@@ -63,10 +62,9 @@ const allSkills = [
 ];
 
 function Skills() {
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeTab, setActiveTab] = useState("frontend");
 
-  const filteredSkills =
-    activeTab === "all" ? allSkills : allSkills.filter((s) => s.category === activeTab);
+  const filteredSkills = allSkills.filter((s) => s.category === activeTab);
 
   return (
     <section className="skills-section" id="skills">
