@@ -193,7 +193,7 @@ function Certifications() {
   const filteredCerts = allCertificates.filter((c) => c.category === activeCategory);
 
   return (
-    <section className="certifications-section" id="certifications">
+    <section className="certifications-section scroll-reveal-section" id="certifications">
       <div className="container">
         {/* Section Header */}
         <div className="section-badge">📜 Verified Credentials</div>

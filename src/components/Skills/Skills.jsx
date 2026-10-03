@@ -67,7 +67,7 @@ function Skills() {
   const filteredSkills = allSkills.filter((s) => s.category === activeTab);
 
   return (
-    <section className="skills-section" id="skills">
+    <section className="skills-section scroll-reveal-section" id="skills">
       <div className="container">
         {/* Section Header */}
         <div className="section-header">

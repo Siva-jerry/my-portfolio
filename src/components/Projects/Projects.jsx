@@ -199,7 +199,7 @@ function Projects() {
   const nextIndex = (currentIndex + 1) % total;
 
   return (
-    <section id="projects" className="projects-section lambo-showcase-section">
+    <section id="projects" className="projects-section lambo-showcase-section scroll-reveal-section">
       <div className="container lambo-container">
         {/* Section Header Badge */}
         <div className="section-header">

@@ -58,7 +58,7 @@ const highlights = [
 
 function About() {
   return (
-    <section className="about-section" id="about">
+    <section className="about-section scroll-reveal-section" id="about">
       <div className="container">
         {/* Section Header */}
         <div className="section-header">

@@ -10,8 +10,11 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import FloatingIcons from "./components/FloatingIcons";
 import SocialSidebar from "./components/SocialSidebar/SocialSidebar";
+import useScrollReveal from "./hooks/useScrollReveal";
 
 function App() {
+  useScrollReveal();
+
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("portfolio_theme");
     if (savedTheme) return savedTheme;

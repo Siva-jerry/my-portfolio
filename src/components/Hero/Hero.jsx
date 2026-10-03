@@ -19,7 +19,7 @@ function Hero() {
   ];
 
   return (
-    <section className="hero-section" id="hero">
+    <section className="hero-section scroll-reveal-section" id="hero">
       {/* Luminous Ambient Background Glows */}
       <div className="hero-ambient-glow glow-top"></div>
       <div className="hero-ambient-glow glow-bottom"></div>

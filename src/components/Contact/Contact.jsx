@@ -48,7 +48,7 @@ function Contact() {
   };
 
   return (
-    <section className="contact-section" id="contact">
+    <section className="contact-section scroll-reveal-section" id="contact">
       <div className="container">
         {/* Section Header */}
         <div className="section-header">

@@ -50,7 +50,7 @@ const achievements = [
 
 function Achievements() {
   return (
-    <section className="achievements-section" id="achievements">
+    <section className="achievements-section scroll-reveal-section" id="achievements">
       <div className="container">
         {/* Section Header */}
         <div className="section-header">

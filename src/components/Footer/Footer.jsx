@@ -97,7 +97,7 @@ function Footer() {
   const techBadges = ["React 19", "Vite", "Node.js", "Android Studio", "Firebase", "Gemini AI", "CSS3"];
 
   return (
-    <footer className="footer-section">
+    <footer className="footer-section scroll-reveal-section">
       <div className="container">
         {/* Top Callout CTA Strip with Integrated Animation */}
         <div className="footer-cta-strip glass-panel">
